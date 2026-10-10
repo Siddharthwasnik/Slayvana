@@ -44,7 +44,7 @@
       <div id="cart-items">
         <!-- Item 1 -->
         <div class="cart-item" id="cart-item-1">
-          <img src="images/product_1.jpg" alt="Chamkili Peplum Set" class="cart-item-img" / loading="lazy">
+          <img src="images/product_1.jpg" alt="Chamkili Peplum Set" class="cart-item-img" loading="lazy" />
           <div class="cart-item-body">
             <p class="cart-item-collection">Monsoon Diaries</p>
             <p class="cart-item-name">Chamkili Peplum Set</p>
@@ -62,7 +62,7 @@
         </div>
         <!-- Item 2 -->
         <div class="cart-item" id="cart-item-2">
-          <img src="images/product_3.jpg" alt="Sunshine Block Print Set" class="cart-item-img" / loading="lazy">
+          <img src="images/product_3.jpg" alt="Sunshine Block Print Set" class="cart-item-img" loading="lazy" />
           <div class="cart-item-body">
             <p class="cart-item-collection">Summer Diaries</p>
             <p class="cart-item-name">Sunshine Block Print Set</p>
@@ -120,61 +120,102 @@
 <div class="toast-container" id="toast-container" aria-live="polite"></div>
 <script src="main.js"></script>
 <script>
-  const prices = {1:1299, 2:1599};
-  const qtys   = {1:1, 2:1};
-  function recalc() {
-    const subtotal = Object.keys(prices).filter(k=>document.getElementById('cart-item-'+k)&&!document.getElementById('cart-item-'+k).hidden).reduce((s,k)=>s+prices[k]*qtys[k],0);
-    document.getElementById('subtotal').textContent = 'Rs. ' + subtotal.toLocaleString('en-IN');
-    const ship = subtotal >= 999 ? 0 : 99;
-    document.getElementById('shipping-cost').textContent = ship===0?'Free':'Rs. '+ship;
-    document.getElementById('ship-progress').style.width = Math.min(100,(subtotal/999)*100)+'%';
-    if (subtotal>=999) document.getElementById('ship-progress').classList.add('progress-fill--complete');
-    const disc = document.getElementById('discount-row').hidden ? 0 : Math.round(subtotal*0.15);
-    document.getElementById('total').textContent = 'Rs. ' + (subtotal+ship-disc).toLocaleString('en-IN');
-    document.getElementById('discount-val').textContent = '- Rs. '+disc.toLocaleString('en-IN');
+function renderCart() {
+  const cart = (typeof CartManager !== 'undefined') ? CartManager.getCart() : [];
+  const container = document.getElementById('cart-items');
+  container.innerHTML = '';
+  
+  if (cart.length === 0) {
+    document.getElementById('cart-empty').hidden = false;
+    document.getElementById('cart-count').textContent = '(0 items)';
+    document.getElementById('checkout-btn').style.pointerEvents = 'none';
+    document.getElementById('checkout-btn').style.opacity = '0.4';
+    document.getElementById('subtotal').textContent = 'Rs. 0';
+    document.getElementById('shipping-cost').textContent = 'Rs. 0';
+    document.getElementById('total').textContent = 'Rs. 0';
+    document.getElementById('ship-progress').style.width = '0%';
+    return;
   }
-  document.querySelectorAll('.qty-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const item=btn.dataset.item; const dir=+btn.dataset.dir;
-      const input=btn.closest('.qty-stepper').querySelector('.qty-value');
-      const newV=Math.max(1,Math.min(10,+input.value+dir));
-      input.value=newV; qtys[item]=newV;
-      btn.closest('.qty-stepper').querySelector('[data-dir="-1"]').disabled=(newV===1);
-      btn.closest('.qty-stepper').querySelector('[data-dir="1"]').disabled=(newV===10);
-      recalc();
-    });
-  });
-  document.querySelectorAll('.cart-item-remove').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const item=btn.dataset.item;
-      const row=document.getElementById('cart-item-'+item);
-      row.style.transition='opacity 300ms'; row.style.opacity='0';
-      setTimeout(()=>{row.hidden=true; recalc(); checkEmpty();},300);
-    });
-  });
-  function checkEmpty(){
-    const cart = (typeof CartManager !== 'undefined') ? CartManager.getCart() : [];
-    const visible = [...document.querySelectorAll('.cart-item')].filter(r=>!r.hidden);
+
+  document.getElementById('cart-empty').hidden = true;
+  document.getElementById('checkout-btn').style.pointerEvents = 'auto';
+  document.getElementById('checkout-btn').style.opacity = '1';
+  
+  let subtotal = 0;
+  let totalItems = 0;
+
+  cart.forEach((item, index) => {
+    const price = item.price || 1299; 
+    subtotal += price * item.qty;
+    totalItems += item.qty;
     
-    // If local storage is empty OR all items removed visually
-    if(cart.length === 0 || visible.length === 0){
-      document.getElementById('cart-items').innerHTML = ''; // Clear items
-      document.getElementById('cart-empty').hidden = false;
-      document.getElementById('cart-count').textContent = '(0 items)';
-      document.getElementById('checkout-btn').style.pointerEvents = 'none';
-      document.getElementById('checkout-btn').style.opacity = '0.4';
-    } else {
-      document.getElementById('cart-count').textContent = '(' + visible.length + ' items)';
-    }
-  }
-  document.getElementById('promo-apply-btn').addEventListener('click',()=>{
-    const code=document.getElementById('promo-code').value.trim().toUpperCase();
-    if(code==='SLAY15'){document.getElementById('promo-success').hidden=false;document.getElementById('promo-error').hidden=true;document.getElementById('discount-row').hidden=false;recalc();}
-    else{document.getElementById('promo-error').hidden=false;document.getElementById('promo-success').hidden=true;document.getElementById('discount-row').hidden=true;recalc();}
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <img src="${item.image || 'images/product_1.jpg'}" alt="${item.name}" class="cart-item-img" loading="lazy" />
+      <div class="cart-item-body">
+        <p class="cart-item-name">${item.name}</p>
+        <p class="cart-item-variants">Colour: ${item.colour || 'N/A'} &nbsp;|&nbsp; Size: ${item.size}</p>
+        <button class="cart-item-remove" aria-label="Remove from cart" data-id="${item.id}" data-size="${item.size}">Remove</button>
+      </div>
+      <div class="cart-item-right">
+        <div class="qty-stepper" role="group">
+          <button class="qty-btn qty-minus" data-id="${item.id}" data-size="${item.size}" ${item.qty <= 1 ? 'disabled' : ''}>&#8722;</button>
+          <input type="number" class="qty-value" value="${item.qty}" readonly />
+          <button class="qty-btn qty-plus" data-id="${item.id}" data-size="${item.size}" ${item.qty >= 10 ? 'disabled' : ''}>&#43;</button>
+        </div>
+        <p class="cart-item-price">Rs. ${(price * item.qty).toLocaleString('en-IN')}</p>
+      </div>
+    `;
+    container.appendChild(div);
   });
-  recalc();
-  // Run on load
-  document.addEventListener('DOMContentLoaded', checkEmpty);
+
+  document.getElementById('cart-count').textContent = '(' + totalItems + ' items)';
+  document.getElementById('subtotal').textContent = 'Rs. ' + subtotal.toLocaleString('en-IN');
+  
+  const ship = subtotal >= 999 ? 0 : 99;
+  document.getElementById('shipping-cost').textContent = ship === 0 ? 'Free' : 'Rs. ' + ship;
+  
+  const progress = Math.min(100, (subtotal / 999) * 100);
+  document.getElementById('ship-progress').style.width = progress + '%';
+  if (subtotal >= 999) document.getElementById('ship-progress').classList.add('progress-fill--complete');
+  else document.getElementById('ship-progress').classList.remove('progress-fill--complete');
+
+  const disc = document.getElementById('discount-row').hidden ? 0 : Math.round(subtotal * 0.15);
+  document.getElementById('total').textContent = 'Rs. ' + (subtotal + ship - disc).toLocaleString('en-IN');
+  if(disc > 0) document.getElementById('discount-val').textContent = '- Rs. ' + disc.toLocaleString('en-IN');
+
+  document.querySelectorAll('.cart-item-remove').forEach(btn => {
+    btn.addEventListener('click', e => {
+      CartManager.removeItem(e.target.dataset.id, e.target.dataset.size);
+      renderCart();
+    });
+  });
+  document.querySelectorAll('.qty-plus').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const item = CartManager.getCart().find(i => i.id === e.target.dataset.id && i.size === e.target.dataset.size);
+      CartManager.updateQty(e.target.dataset.id, e.target.dataset.size, item.qty + 1);
+      renderCart();
+    });
+  });
+  document.querySelectorAll('.qty-minus').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const item = CartManager.getCart().find(i => i.id === e.target.dataset.id && i.size === e.target.dataset.size);
+      CartManager.updateQty(e.target.dataset.id, e.target.dataset.size, item.qty - 1);
+      renderCart();
+    });
+  });
+}
+
+document.getElementById('promo-apply-btn').addEventListener('click', () => {
+  const code = document.getElementById('promo-code').value.trim().toUpperCase();
+  document.getElementById('discount-row').hidden = (code !== 'SLAY15');
+  document.getElementById('promo-success').hidden = (code !== 'SLAY15');
+  document.getElementById('promo-error').hidden = (code === 'SLAY15');
+  renderCart();
+});
+
+document.addEventListener('DOMContentLoaded', renderCart);
 </script>
 </body></html>
 

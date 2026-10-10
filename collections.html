@@ -254,7 +254,7 @@
         <div class="collections-grid" id="collections-grid" role="list" aria-label="Products">
 
           <!-- Product 1 -->
-          <article class="product-card" role="listitem" data-category="kurtis" id="col-chamkili">
+          <article class="product-card" role="listitem" data-category="kurtis" id="col-chamkili" data-id="chamkili">
             <div class="product-card-media">
               <a href="product.html?id=chamkili" class="product-media-link" tabindex="-1" aria-hidden="true">
                 <img src="images/product_1.jpg" alt="Chamkili Peplum Set — Pink floral" class="product-img product-img--primary" loading="lazy" />
@@ -279,7 +279,7 @@
           </article>
 
           <!-- Product 2 -->
-          <article class="product-card" role="listitem" data-category="tops" id="col-teal">
+          <article class="product-card" role="listitem" data-category="tops" id="col-teal" data-id="teal-cape">
             <div class="product-card-media">
               <a href="product.html?id=teal-cape" class="product-media-link" tabindex="-1" aria-hidden="true">
                 <img src="images/product_2.jpg" alt="Teal Majesty Cape Set" class="product-img product-img--primary" loading="lazy" />
@@ -301,7 +301,7 @@
           </article>
 
           <!-- Product 3 -->
-          <article class="product-card" role="listitem" data-category="coord" id="col-mustard">
+          <article class="product-card" role="listitem" data-category="coord" id="col-mustard" data-id="mustard-coord">
             <div class="product-card-media">
               <a href="product.html?id=mustard-coord" class="product-media-link" tabindex="-1" aria-hidden="true">
                 <img src="images/product_3.jpg" alt="Sunshine Block Print Set" class="product-img product-img--primary" loading="lazy" />
@@ -323,7 +323,7 @@
           </article>
 
           <!-- Product 4 -->
-          <article class="product-card" role="listitem" data-category="tops" id="col-crimson">
+          <article class="product-card" role="listitem" data-category="tops" id="col-crimson" data-id="crimson-backless">
             <div class="product-card-media">
               <a href="product.html?id=crimson-backless" class="product-media-link" tabindex="-1" aria-hidden="true">
                 <img src="images/product_4.jpg" alt="Crimson Drama Backless Top" class="product-img product-img--primary" loading="lazy" />
@@ -345,7 +345,7 @@
           </article>
 
           <!-- Product 5 -->
-          <article class="product-card" role="listitem" data-category="kurtis festive" id="col-pooja">
+          <article class="product-card" role="listitem" data-category="kurtis festive" id="col-pooja" data-id="pooja-baddie">
             <div class="product-card-media">
               <a href="product.html?id=pooja-baddie" class="product-media-link" tabindex="-1" aria-hidden="true">
                 <div class="product-img-placeholder" style="background:linear-gradient(160deg,#d4c5f9,#7c4dba 60%,#3d1f7a);"><span class="placeholder-icon" aria-hidden="true">&#x1FAB7;</span></div>
@@ -367,7 +367,7 @@
           </article>
 
           <!-- Product 6 -->
-          <article class="product-card" role="listitem" data-category="coord" id="col-monsoon">
+          <article class="product-card" role="listitem" data-category="coord" id="col-monsoon" data-id="monsoon-twinning">
             <div class="product-card-media">
               <a href="product.html?id=monsoon-twinning" class="product-media-link" tabindex="-1" aria-hidden="true">
                 <div class="product-img-placeholder" style="background:linear-gradient(160deg,#c8f2e8,#2c9c70 60%,#1a5c42);"><span class="placeholder-icon" aria-hidden="true">&#x1F33F;</span></div>
@@ -495,8 +495,13 @@
       document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
         const chip = document.createElement('span');
         chip.className = 'active-chip';
-        chip.innerHTML = cb.value + '<button class="chip-remove" aria-label="Remove ' + cb.value + ' filter">&#x2715;</button>';
-        chip.querySelector('.chip-remove').onclick = () => { cb.checked = false; updateChips(); };
+        chip.textContent = cb.value;
+        const btn = document.createElement('button');
+        btn.className = 'chip-remove';
+        btn.setAttribute('aria-label', 'Remove ' + cb.value + ' filter');
+        btn.innerHTML = '&#x2715;';
+        btn.onclick = () => { cb.checked = false; updateChips(); };
+        chip.appendChild(btn);
         chipsContainer.appendChild(chip);
       });
     }

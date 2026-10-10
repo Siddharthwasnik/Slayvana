@@ -211,7 +211,9 @@ document.querySelectorAll('.btn--add-to-cart').forEach((btn) => {
         id: productId,
         name: productName,
         size: 'M',
-        qty: 1
+        qty: 1,
+        price: parseInt(productCard?.querySelector('.price-current')?.textContent.replace(/\D/g, '')) || 1299,
+        image: productCard?.querySelector('.product-img')?.getAttribute('src') || 'images/product_1.jpg'
       });
 
       announceToSR(`${productName} added to cart`);

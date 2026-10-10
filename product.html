@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -110,7 +110,7 @@
         <img src="images/product_1.jpg" alt="Chamkili Peplum Set - back view" class="gallery-thumb" role="listitem" tabindex="0" aria-label="View image 4" />
       </div>
       <div class="gallery-main">
-        <img src="images/product_1.jpg" alt="Chamkili Peplum Set â€” pink floral peplum kurti with matching printed pants" class="gallery-main-img" id="gallery-main-img" / loading="lazy">
+        <img src="images/product_1.jpg" alt="Chamkili Peplum Set — pink floral peplum kurti with matching printed pants" class="gallery-main-img" id="gallery-main-img" fetchpriority="high" />
         <button class="gallery-nav gallery-nav--prev" aria-label="Previous image">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
@@ -424,7 +424,12 @@
 
   // â”€â”€ Add to cart â”€â”€
   document.getElementById('pdp-atc').addEventListener('click', e => {
-    if (!selectedSize) { e.preventDefault(); document.getElementById('size-error').classList.add('visible'); document.querySelector('#size-selector .size-btn').focus(); return; }
+    e.preventDefault();
+    if (!selectedSize) { document.getElementById('size-error').classList.add('visible'); document.querySelector('#size-selector .size-btn').focus(); return; }
+    const qty = parseInt(document.getElementById('qty-value').value, 10) || 1;
+    const colour = document.getElementById('selected-colour').textContent;
+    CartManager.addItem({ id: 'chamkili', name: 'Chamkili Peplum Set', size: selectedSize, colour: colour, qty: qty, price: 1299, image: 'images/product_1.jpg' });
+    window.location.href = 'cart.html';
   });
 
   // â”€â”€ Wishlist â”€â”€

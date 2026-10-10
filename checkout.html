@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -207,7 +207,12 @@
   document.getElementById('place-order-btn').addEventListener('click',()=>{
     const btn=document.getElementById('place-order-btn');
     btn.textContent='Placing Order...'; btn.disabled=true;
-    setTimeout(()=>{ document.querySelectorAll('.step-panel').forEach(p=>p.classList.remove('active')); document.getElementById('step-success').classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); },1500);
+    setTimeout(()=>{ 
+      localStorage.removeItem('slayvana_cart');
+      document.querySelectorAll('.step-panel').forEach(p=>p.classList.remove('active')); 
+      document.getElementById('step-success').classList.add('active'); 
+      window.scrollTo({top:0,behavior:'smooth'}); 
+    },1500);
   });
 </script>
 </body></html>
