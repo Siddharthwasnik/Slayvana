@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,7 +44,7 @@
       <div id="cart-items">
         <!-- Item 1 -->
         <div class="cart-item" id="cart-item-1">
-          <img src="images/product_1.jpg" alt="Chamkili Peplum Set" class="cart-item-img" />
+          <img src="images/product_1.jpg" alt="Chamkili Peplum Set" class="cart-item-img" / loading="lazy">
           <div class="cart-item-body">
             <p class="cart-item-collection">Monsoon Diaries</p>
             <p class="cart-item-name">Chamkili Peplum Set</p>
@@ -62,7 +62,7 @@
         </div>
         <!-- Item 2 -->
         <div class="cart-item" id="cart-item-2">
-          <img src="images/product_3.jpg" alt="Sunshine Block Print Set" class="cart-item-img" />
+          <img src="images/product_3.jpg" alt="Sunshine Block Print Set" class="cart-item-img" / loading="lazy">
           <div class="cart-item-body">
             <p class="cart-item-collection">Summer Diaries</p>
             <p class="cart-item-name">Sunshine Block Print Set</p>
@@ -153,9 +153,19 @@
     });
   });
   function checkEmpty(){
-    const visible=[...document.querySelectorAll('.cart-item')].filter(r=>!r.hidden);
-    if(visible.length===0){document.getElementById('cart-empty').hidden=false; document.getElementById('cart-count').textContent='(0 items)'; document.getElementById('checkout-btn').style.pointerEvents='none'; document.getElementById('checkout-btn').style.opacity='0.4';}
-    else document.getElementById('cart-count').textContent='('+visible.length+' items)';
+    const cart = (typeof CartManager !== 'undefined') ? CartManager.getCart() : [];
+    const visible = [...document.querySelectorAll('.cart-item')].filter(r=>!r.hidden);
+    
+    // If local storage is empty OR all items removed visually
+    if(cart.length === 0 || visible.length === 0){
+      document.getElementById('cart-items').innerHTML = ''; // Clear items
+      document.getElementById('cart-empty').hidden = false;
+      document.getElementById('cart-count').textContent = '(0 items)';
+      document.getElementById('checkout-btn').style.pointerEvents = 'none';
+      document.getElementById('checkout-btn').style.opacity = '0.4';
+    } else {
+      document.getElementById('cart-count').textContent = '(' + visible.length + ' items)';
+    }
   }
   document.getElementById('promo-apply-btn').addEventListener('click',()=>{
     const code=document.getElementById('promo-code').value.trim().toUpperCase();
@@ -163,5 +173,8 @@
     else{document.getElementById('promo-error').hidden=false;document.getElementById('promo-success').hidden=true;document.getElementById('discount-row').hidden=true;recalc();}
   });
   recalc();
+  // Run on load
+  document.addEventListener('DOMContentLoaded', checkEmpty);
 </script>
 </body></html>
+

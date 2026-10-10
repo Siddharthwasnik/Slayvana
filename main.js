@@ -429,7 +429,13 @@ document.querySelectorAll('.nav-item.has-dropdown').forEach((item) => {
 // Cart Manager
 const CartManager = {
   getCart() {
-    return JSON.parse(localStorage.getItem('slayvana_cart')) || [];
+    try {
+      const data = localStorage.getItem('slayvana_cart');
+      return data ? JSON.parse(data) : [];
+    } catch (e) {
+      console.error('Failed to parse cart data:', e);
+      return [];
+    }
   },
   saveCart(cart) {
     localStorage.setItem('slayvana_cart', JSON.stringify(cart));
@@ -466,7 +472,13 @@ const CartManager = {
 // Wishlist Manager
 const WishlistManager = {
   getWishlist() {
-    return JSON.parse(localStorage.getItem('slayvana_wishlist')) || [];
+    try {
+      const data = localStorage.getItem('slayvana_wishlist');
+      return data ? JSON.parse(data) : [];
+    } catch (e) {
+      console.error('Failed to parse wishlist data:', e);
+      return [];
+    }
   },
   saveWishlist(list) {
     localStorage.setItem('slayvana_wishlist', JSON.stringify(list));
@@ -514,6 +526,16 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.setAttribute('aria-pressed', String(inWishlist));
     }
   });
+});
+
+// Cross-tab synchronization
+window.addEventListener('storage', (e) => {
+  if (e.key === 'slayvana_cart') {
+    updateCartBadge();
+  }
+  if (e.key === 'slayvana_wishlist') {
+    // Optionally trigger a UI update for wishlist icons if needed
+  }
 });
 
 console.log('%cSlayvana — Modern Ethnic Fusion Fashion', 'font-size:14px; font-weight:bold; color:#c8874a;');
