@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Slayvana</title>
+  <meta name="description" content="Complete your purchase securely. Multiple payment options — UPI, Cards, Net Banking, COD." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .checkout-wrap{max-width:880px;margin:0 auto;padding:var(--space-xl) var(--space-lg);}
+    .checkout-layout{display:grid;grid-template-columns:1fr 320px;gap:var(--space-xl);align-items:start;margin-top:var(--space-xl);}
+    .checkout-panel{background:var(--color-text-tertiary);border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:var(--space-xl);}
+    .checkout-panel-title{font-family:var(--font-family-primary);font-size:20px;font-weight:500;margin-bottom:var(--space-lg);}
+    .form-section{display:flex;flex-direction:column;gap:var(--space-md);}
+    .step-panel{display:none;}.step-panel.active{display:block;}
+    .success-panel{text-align:center;padding:var(--space-3xl) var(--space-lg);}
+    .success-icon{font-size:64px;margin-bottom:var(--space-md);}
+    .success-title{font-family:var(--font-family-primary);font-size:36px;font-weight:500;margin-bottom:var(--space-md);}
+    .order-num{background:var(--color-surface-raised);padding:var(--space-sm) var(--space-lg);border-radius:var(--radius-sm);display:inline-block;font-size:var(--font-size-xs);font-weight:var(--font-weight-semibold);letter-spacing:0.1em;margin-bottom:var(--space-lg);}
+    @media(max-width:768px){.checkout-layout{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="announcement-bar" role="banner"><div class="announcement-inner"><span>&#x1F512; Secure Checkout — SSL Encrypted</span></div></div>
+<header class="site-header" id="site-header" role="banner" style="box-shadow:none;border-bottom:1px solid var(--color-border-subtle);">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo" aria-label="Slayvana home"><span class="logo-text">SLAYVANA</span><span class="logo-tagline">Modern Ethnic Fusion</span></a>
+    <div style="flex:1;"></div>
+    <a href="cart.html" style="font-size:var(--font-size-xs);color:#777;text-decoration:underline;">&#x2190; Back to Cart</a>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="checkout-wrap">
+    <div class="checkout-stepper" role="list" aria-label="Checkout steps">
+      <div class="step-item active" id="stepper-1" role="listitem"><div class="step-circle">1</div><span class="step-label">Delivery</span></div>
+      <div class="step-line" id="line-1"></div>
+      <div class="step-item" id="stepper-2" role="listitem"><div class="step-circle">2</div><span class="step-label">Payment</span></div>
+      <div class="step-line" id="line-2"></div>
+      <div class="step-item" id="stepper-3" role="listitem"><div class="step-circle">3</div><span class="step-label">Review</span></div>
+    </div>
+
+    <div class="checkout-layout">
+      <div>
+        <!-- Step 1: Delivery -->
+        <div class="step-panel active" id="step-1" aria-label="Delivery information">
+          <div class="checkout-panel">
+            <h2 class="checkout-panel-title">Delivery Address</h2>
+            <form id="delivery-form" class="form-section" novalidate>
+              <div class="form-row">
+                <div class="form-group"><label class="form-label" for="first-name">First Name <span class="required" aria-hidden="true">*</span></label><input type="text" id="first-name" class="form-input" placeholder="Priya" autocomplete="given-name" required /><p class="form-error" id="first-name-err" hidden>Please enter your first name.</p></div>
+                <div class="form-group"><label class="form-label" for="last-name">Last Name <span class="required" aria-hidden="true">*</span></label><input type="text" id="last-name" class="form-input" placeholder="Sharma" autocomplete="family-name" required /></div>
+              </div>
+              <div class="form-group"><label class="form-label" for="email">Email <span class="required" aria-hidden="true">*</span></label><input type="email" id="email" class="form-input" placeholder="priya@email.com" autocomplete="email" required /><p class="form-error" id="email-err" hidden>Please enter a valid email address.</p></div>
+              <div class="form-group"><label class="form-label" for="phone">Phone <span class="required" aria-hidden="true">*</span></label><input type="tel" id="phone" class="form-input" placeholder="9XXXXXXXXX" autocomplete="tel" maxlength="10" required /><p class="form-hint">10-digit mobile number</p><p class="form-error" id="phone-err" hidden>Please enter a valid 10-digit phone number.</p></div>
+              <div class="form-group"><label class="form-label" for="addr1">Address Line 1 <span class="required" aria-hidden="true">*</span></label><input type="text" id="addr1" class="form-input" placeholder="Flat / House No., Building Name" autocomplete="address-line1" required /></div>
+              <div class="form-group"><label class="form-label" for="addr2">Address Line 2</label><input type="text" id="addr2" class="form-input" placeholder="Street, Area, Landmark" autocomplete="address-line2" /></div>
+              <div class="form-row">
+                <div class="form-group"><label class="form-label" for="city">City <span class="required" aria-hidden="true">*</span></label><input type="text" id="city" class="form-input" placeholder="Mumbai" autocomplete="address-level2" required /></div>
+                <div class="form-group"><label class="form-label" for="state">State <span class="required" aria-hidden="true">*</span></label><select id="state" class="form-select" autocomplete="address-level1" required><option value="">Select State</option><option>Maharashtra</option><option>Delhi</option><option>Gujarat</option><option>Karnataka</option><option>Tamil Nadu</option><option>Rajasthan</option><option>West Bengal</option><option>Uttar Pradesh</option><option>Telangana</option><option>Madhya Pradesh</option></select></div>
+              </div>
+              <div class="form-group"><label class="form-label" for="pincode">Pincode <span class="required" aria-hidden="true">*</span></label><input type="text" id="pincode" class="form-input" placeholder="400001" maxlength="6" autocomplete="postal-code" required /><p class="form-error" id="pin-err" hidden>Please enter a valid 6-digit pincode.</p></div>
+              <div class="form-check"><input type="checkbox" class="form-check-input" id="save-addr" /><label class="form-check-label" for="save-addr">Save this address for future orders</label></div>
+              <button type="submit" class="btn btn--primary" style="border-radius:var(--radius-xs);padding:14px;font-size:var(--font-size-sm);">Continue to Payment</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment -->
+        <div class="step-panel" id="step-2" aria-label="Payment method">
+          <div class="checkout-panel">
+            <h2 class="checkout-panel-title">Payment Method</h2>
+            <form id="payment-form" class="form-section">
+              <div class="payment-option selected" id="opt-upi"><input type="radio" name="payment" value="upi" id="pay-upi" checked /><div><label class="payment-option-label" for="pay-upi">UPI</label><p class="payment-option-desc">Pay via Google Pay, PhonePe, Paytm</p></div></div>
+              <div class="payment-option" id="opt-card"><input type="radio" name="payment" value="card" id="pay-card" /><div><label class="payment-option-label" for="pay-card">Credit / Debit Card</label><p class="payment-option-desc">Visa, Mastercard, RuPay</p></div></div>
+              <div class="payment-option" id="opt-nb"><input type="radio" name="payment" value="netbanking" id="pay-nb" /><div><label class="payment-option-label" for="pay-nb">Net Banking</label><p class="payment-option-desc">All major Indian banks</p></div></div>
+              <div class="payment-option" id="opt-cod"><input type="radio" name="payment" value="cod" id="pay-cod" /><div><label class="payment-option-label" for="pay-cod">Cash on Delivery</label><p class="payment-option-desc">Pay when your order arrives</p></div></div>
+
+              <div id="upi-fields">
+                <div class="form-group"><label class="form-label" for="upi-id">UPI ID <span class="required" aria-hidden="true">*</span></label><input type="text" id="upi-id" class="form-input" placeholder="yourname@paytm" /></div>
+              </div>
+              <div id="card-fields" hidden>
+                <div class="form-group"><label class="form-label" for="card-num">Card Number</label><input type="text" id="card-num" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19" /></div>
+                <div class="form-row">
+                  <div class="form-group"><label class="form-label" for="card-exp">Expiry</label><input type="text" id="card-exp" class="form-input" placeholder="MM/YY" maxlength="5" /></div>
+                  <div class="form-group"><label class="form-label" for="card-cvv">CVV</label><input type="password" id="card-cvv" class="form-input" placeholder="***" maxlength="4" /></div>
+                </div>
+                <div class="form-group"><label class="form-label" for="card-name">Name on Card</label><input type="text" id="card-name" class="form-input" placeholder="PRIYA SHARMA" /></div>
+              </div>
+              <div style="display:flex;gap:var(--space-sm);">
+                <button type="button" class="btn btn--outline" id="back-to-delivery" aria-label="Back to delivery">&#x2190; Back</button>
+                <button type="submit" class="btn btn--primary" style="flex:1;border-radius:var(--radius-xs);padding:14px;">Continue to Review</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Step 3: Review -->
+        <div class="step-panel" id="step-3" aria-label="Order review">
+          <div class="checkout-panel">
+            <h2 class="checkout-panel-title">Review Your Order</h2>
+            <div id="review-content">
+              <div style="margin-bottom:var(--space-md);padding:var(--space-md);background:var(--color-surface-raised);border-radius:var(--radius-xs);">
+                <p style="font-size:var(--font-size-xs);font-weight:var(--font-weight-semibold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:var(--space-8);">Delivering to</p>
+                <p id="review-addr" style="font-size:var(--font-size-sm);color:#555;"></p>
+                <a href="#" id="edit-delivery" style="font-size:var(--font-size-xs);color:var(--color-text-inverse);text-decoration:underline;">Edit</a>
+              </div>
+              <div style="margin-bottom:var(--space-md);padding:var(--space-md);background:var(--color-surface-raised);border-radius:var(--radius-xs);">
+                <p style="font-size:var(--font-size-xs);font-weight:var(--font-weight-semibold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:var(--space-8);">Payment</p>
+                <p id="review-pay" style="font-size:var(--font-size-sm);color:#555;"></p>
+                <a href="#" id="edit-payment" style="font-size:var(--font-size-xs);color:var(--color-text-inverse);text-decoration:underline;">Edit</a>
+              </div>
+              <div style="padding:var(--space-md);background:var(--color-surface-raised);border-radius:var(--radius-xs);">
+                <p style="font-size:var(--font-size-xs);font-weight:var(--font-weight-semibold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:var(--space-8);">Order Items</p>
+                <div style="font-size:var(--font-size-sm);color:#555;display:flex;flex-direction:column;gap:4px;"><p>Chamkili Peplum Set &nbsp;&#183;&nbsp; Pink &nbsp;&#183;&nbsp; M &nbsp;&#183;&nbsp; x1 &nbsp;&nbsp; <strong>Rs. 1,299</strong></p><p>Sunshine Block Print Set &nbsp;&#183;&nbsp; Mustard &nbsp;&#183;&nbsp; S &nbsp;&#183;&nbsp; x1 &nbsp;&nbsp; <strong>Rs. 1,599</strong></p></div>
+              </div>
+            </div>
+            <div style="display:flex;gap:var(--space-sm);margin-top:var(--space-lg);">
+              <button type="button" class="btn btn--outline" id="back-to-payment" aria-label="Back to payment">&#x2190; Back</button>
+              <button type="button" class="btn btn--primary" id="place-order-btn" style="flex:1;border-radius:var(--radius-xs);padding:14px;">Place Order — Rs. 2,997</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success state -->
+        <div class="step-panel" id="step-success">
+          <div class="success-panel">
+            <div class="success-icon" aria-hidden="true">&#x1F389;</div>
+            <h2 class="success-title">Order Placed!</h2>
+            <p style="font-size:var(--font-size-md);color:#555;margin-bottom:var(--space-md);">Thank you for shopping with Slayvana. Your order is confirmed.</p>
+            <div class="order-num" aria-label="Order number SLV-20261010-4821">#SLV-20261010-4821</div>
+            <p style="font-size:var(--font-size-sm);color:#777;margin-bottom:var(--space-2xl);">A confirmation email has been sent to your email address. Estimated delivery: 3–5 business days.</p>
+            <div style="display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;">
+              <a href="account.html" class="btn btn--outline">Track Order</a>
+              <a href="collections.html" class="btn btn--primary">Continue Shopping</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini Order Summary -->
+      <div class="order-summary-panel" aria-label="Order summary">
+        <h2 class="summary-title">Your Order</h2>
+        <div class="order-item"><img src="images/product_1.jpg" alt="Chamkili Peplum Set" class="order-item-img" /><div class="order-item-info"><p class="order-item-name">Chamkili Peplum Set</p><p class="order-item-meta">Pink | M | x1</p></div><span style="font-size:var(--font-size-sm);font-weight:600;">Rs. 1,299</span></div>
+        <div class="order-item"><img src="images/product_3.jpg" alt="Sunshine Block Print Set" class="order-item-img" /><div class="order-item-info"><p class="order-item-name">Sunshine Block Print Set</p><p class="order-item-meta">Mustard | S | x1</p></div><span style="font-size:var(--font-size-sm);font-weight:600;">Rs. 1,599</span></div>
+        <div class="summary-row" style="margin-top:var(--space-md);"><span>Subtotal</span><span>Rs. 2,898</span></div>
+        <div class="summary-row"><span>Shipping</span><span>Rs. 99</span></div>
+        <div class="summary-row summary-row--total"><span>Total</span><span>Rs. 2,997</span></div>
+        <p style="font-size:10px;color:#aaa;text-align:center;margin-top:var(--space-sm);">&#x1F512; Secured by SSL</p>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="main.js"></script>
+<script>
+  let deliveryData={}, paymentData='UPI';
+  // Payment option selection
+  document.querySelectorAll('.payment-option').forEach(opt=>{
+    opt.addEventListener('click',()=>{
+      document.querySelectorAll('.payment-option').forEach(o=>o.classList.remove('selected'));
+      opt.classList.add('selected');
+      opt.querySelector('input').checked=true;
+      const val=opt.querySelector('input').value;
+      document.getElementById('upi-fields').hidden=(val!=='upi');
+      document.getElementById('card-fields').hidden=(val!=='card');
+      paymentData=val;
+    });
+  });
+  function goStep(n){
+    document.querySelectorAll('.step-panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById('step-'+n).classList.add('active');
+    [1,2,3].forEach(i=>{
+      const s=document.getElementById('stepper-'+i);
+      s.classList.remove('active','done');
+      if(i<n)s.classList.add('done'); else if(i===n)s.classList.add('active');
+      if(i<3){const l=document.getElementById('line-'+i); l.classList.toggle('done',i<n);}
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.getElementById('delivery-form').addEventListener('submit',e=>{
+    e.preventDefault();
+    const fn=document.getElementById('first-name').value.trim();
+    const em=document.getElementById('email').value.trim();
+    const ph=document.getElementById('phone').value.trim();
+    const pin=document.getElementById('pincode').value.trim();
+    let valid=true;
+    if(!fn){document.getElementById('first-name-err').hidden=false;valid=false;}else document.getElementById('first-name-err').hidden=true;
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){document.getElementById('email-err').hidden=false;valid=false;}else document.getElementById('email-err').hidden=true;
+    if(!/^\d{10}$/.test(ph)){document.getElementById('phone-err').hidden=false;valid=false;}else document.getElementById('phone-err').hidden=true;
+    if(!/^\d{6}$/.test(pin)){document.getElementById('pin-err').hidden=false;valid=false;}else document.getElementById('pin-err').hidden=true;
+    if(!valid)return;
+    deliveryData={name:fn+' '+document.getElementById('last-name').value.trim(),addr:document.getElementById('addr1').value+', '+document.getElementById('city').value+' '+pin};
+    goStep(2);
+  });
+  document.getElementById('payment-form').addEventListener('submit',e=>{
+    e.preventDefault();
+    document.getElementById('review-addr').textContent=deliveryData.name+' — '+deliveryData.addr;
+    document.getElementById('review-pay').textContent=paymentData.toUpperCase();
+    goStep(3);
+  });
+  document.getElementById('back-to-delivery').addEventListener('click',()=>goStep(1));
+  document.getElementById('back-to-payment').addEventListener('click',()=>goStep(2));
+  document.getElementById('edit-delivery').addEventListener('click',e=>{e.preventDefault();goStep(1);});
+  document.getElementById('edit-payment').addEventListener('click',e=>{e.preventDefault();goStep(2);});
+  document.getElementById('place-order-btn').addEventListener('click',()=>{
+    const btn=document.getElementById('place-order-btn');
+    btn.textContent='Placing Order...'; btn.disabled=true;
+    setTimeout(()=>{ document.querySelectorAll('.step-panel').forEach(p=>p.classList.remove('active')); document.getElementById('step-success').classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); },1500);
+  });
+</script>
+</body></html>

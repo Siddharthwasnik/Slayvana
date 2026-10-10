@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chamkili Peplum Set — Slayvana</title>
+  <meta name="description" content="Shop the Chamkili Peplum Set — pink floral cotton kurti with matching pants. Available in multiple colours and sizes XS–3XL. Free delivery on Rs. 999+." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .pdp-layout { max-width: var(--max-width); margin: 0 auto; padding: var(--space-xl) var(--space-lg); display: grid; grid-template-columns: 1fr 480px; gap: var(--space-3xl); align-items: start; }
+    .pdp-info { display: flex; flex-direction: column; gap: var(--space-md); position: sticky; top: calc(var(--header-height) + var(--announcement-height) + var(--space-md)); }
+    .pdp-collection { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-warm); }
+    .pdp-title { font-family: var(--font-family-primary); font-size: clamp(24px, 3vw, 36px); font-weight: 500; line-height: 1.1; color: var(--color-surface-base); }
+    .pdp-rating-row { display: flex; align-items: center; gap: var(--space-8); }
+    .pdp-rating-link { font-size: var(--font-size-xs); color: var(--color-text-inverse); text-decoration: underline; }
+    .pdp-price-row { display: flex; align-items: center; gap: var(--space-sm); }
+    .pdp-price-curr { font-size: 24px; font-weight: var(--font-weight-semibold); }
+    .pdp-price-orig { font-size: var(--font-size-lg); color: #aaa; text-decoration: line-through; }
+    .pdp-price-disc { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); color: var(--color-accent-sale); }
+    .pdp-section-label { font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: var(--space-8); }
+    .pdp-actions { display: flex; flex-direction: column; gap: var(--space-8); }
+    .pdp-actions .btn--primary { border-radius: var(--radius-xs); padding: 14px; font-size: var(--font-size-sm); }
+    .pdp-wishlist-btn { display: flex; align-items: center; justify-content: center; gap: var(--space-8); padding: 12px; border: 1.5px solid var(--color-border-subtle); border-radius: var(--radius-xs); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); letter-spacing: 0.08em; text-transform: uppercase; transition: all var(--motion-fast); }
+    .pdp-wishlist-btn:hover { border-color: #c0392b; color: #c0392b; }
+    .delivery-check { display: flex; gap: var(--space-8); margin-top: var(--space-3); }
+    .delivery-input { flex: 1; padding: 10px 12px; border: 1.5px solid var(--color-border-subtle); border-radius: var(--radius-xs); font-size: var(--font-size-sm); outline: none; transition: border-color var(--motion-fast); }
+    .delivery-input:focus { border-color: var(--color-surface-base); }
+    .delivery-check-btn { padding: 10px 16px; background: var(--color-surface-base); color: var(--color-text-tertiary); border: none; border-radius: var(--radius-xs); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); cursor: pointer; letter-spacing: 0.06em; transition: background var(--motion-fast); }
+    .delivery-check-btn:hover { background: #2a2a2a; }
+    .delivery-result { font-size: var(--font-size-xs); color: #2c9c70; margin-top: var(--space-3); }
+    .pdp-accordion-wrap { margin-top: var(--space-md); }
+    .also-like { padding: var(--space-3xl) 0; background: var(--color-surface-raised); }
+    .also-like-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-lg); }
+    .also-like-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); margin-top: var(--space-xl); }
+    .reviews-section { padding: var(--space-3xl) 0; }
+    .reviews-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-lg); }
+    .reviews-summary { display: grid; grid-template-columns: auto 1fr; gap: var(--space-2xl); align-items: center; margin-bottom: var(--space-2xl); }
+    .avg-score { text-align: center; }
+    .avg-num { font-family: var(--font-family-primary); font-size: 64px; font-weight: 300; line-height: 1; }
+    .avg-stars { color: #e8a820; font-size: 18px; letter-spacing: 2px; }
+    .avg-label { font-size: var(--font-size-xs); color: #888; margin-top: 4px; }
+    .size-error { font-size: var(--font-size-xs); color: var(--color-accent-sale); display: none; }
+    .size-error.visible { display: flex; align-items: center; gap: 4px; }
+    @media (max-width: 1024px) { .pdp-layout { grid-template-columns: 1fr; } .pdp-info { position: static; } .also-like-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .also-like-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); } }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="announcement-bar" role="banner" aria-label="Site announcement"><div class="announcement-inner"><span>Free shipping on orders above Rs. 999</span><span class="ann-divider">|</span><span>Use code <strong>SLAY15</strong> for 15% off</span></div></div>
+
+<header class="site-header" id="site-header" role="banner">
+  <div class="header-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+    <a href="index.html" class="site-logo" aria-label="Slayvana home"><span class="logo-text">SLAYVANA</span><span class="logo-tagline">Modern Ethnic Fusion</span></a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+      <ul class="nav-list" role="list">
+        <li class="nav-item has-dropdown"><a href="collections.html" class="nav-link" aria-haspopup="true" aria-expanded="false">New Arrivals</a><div class="nav-dropdown" role="region"><ul role="list"><li><a href="collections.html?filter=week" class="dropdown-link">This Week Drop</a></li><li><a href="collections.html?filter=festive" class="dropdown-link">Festive Edit</a></li></ul></div></li>
+        <li class="nav-item has-dropdown"><a href="collections.html?cat=kurtis" class="nav-link" aria-haspopup="true" aria-expanded="false">Kurtis</a><div class="nav-dropdown" role="region"><ul role="list"><li><a href="collections.html?style=peplum" class="dropdown-link">Peplum Kurtis</a></li><li><a href="collections.html?style=halter" class="dropdown-link">Halter Neck</a></li><li><a href="collections.html?style=cape" class="dropdown-link">Cape Tops</a></li></ul></div></li>
+        <li class="nav-item has-dropdown"><a href="collections.html?cat=coord-sets" class="nav-link" aria-haspopup="true" aria-expanded="false">Co-ord Sets</a><div class="nav-dropdown" role="region"><ul role="list"><li><a href="collections.html?style=twinning" class="dropdown-link">Twinning Sets</a></li></ul></div></li>
+        <li class="nav-item"><a href="collections.html?cat=sale" class="nav-link nav-link--sale">Sale</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="action-btn" id="search-toggle" aria-label="Open search" aria-expanded="false" aria-controls="search-overlay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      <a href="account.html" class="action-btn" aria-label="My account"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="wishlist.html" class="action-btn" aria-label="Wishlist"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+      <a href="cart.html" class="action-btn cart-btn" aria-label="Shopping cart, 2 items"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-badge" aria-hidden="true">2</span></a>
+    </div>
+  </div>
+  <div class="search-overlay" id="search-overlay" role="search" aria-hidden="true"><div class="search-inner"><label for="search-input" class="sr-only">Search</label><input type="search" id="search-input" class="search-input" placeholder="Search..." autocomplete="off" /><button class="search-close" id="search-close" aria-label="Close search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div></div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
+  <div class="mobile-nav-panel" id="mobile-nav-panel" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="mobile-logo">SLAYVANA</div>
+    <nav aria-label="Mobile navigation"><ul class="mobile-nav-list" role="list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="collections.html" class="mobile-nav-link">New Arrivals</a></li>
+      <li><a href="collections.html?cat=kurtis" class="mobile-nav-link">Kurtis</a></li>
+      <li><a href="collections.html?cat=coord-sets" class="mobile-nav-link">Co-ord Sets</a></li>
+      <li><a href="cart.html" class="mobile-nav-link">Cart (2)</a></li>
+    </ul></nav>
+  </div>
+</div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+    <span class="breadcrumb-sep" aria-hidden="true">&#x203A;</span>
+    <span class="breadcrumb-item"><a href="collections.html?cat=kurtis">Kurtis</a></span>
+    <span class="breadcrumb-sep" aria-hidden="true">&#x203A;</span>
+    <span class="breadcrumb-item" aria-current="page">Chamkili Peplum Set</span>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="pdp-layout">
+
+    <!-- Gallery -->
+    <div class="pdp-gallery" aria-label="Product images">
+      <div class="gallery-thumbs" role="list" aria-label="Product thumbnails">
+        <img src="images/product_1.jpg" alt="Chamkili Peplum Set - front view" class="gallery-thumb active" role="listitem" tabindex="0" aria-label="View image 1" />
+        <img src="images/product_1.jpg" alt="Chamkili Peplum Set - detail view" class="gallery-thumb" role="listitem" tabindex="0" aria-label="View image 2" />
+        <img src="images/product_1.jpg" alt="Chamkili Peplum Set - side view" class="gallery-thumb" role="listitem" tabindex="0" aria-label="View image 3" />
+        <img src="images/product_1.jpg" alt="Chamkili Peplum Set - back view" class="gallery-thumb" role="listitem" tabindex="0" aria-label="View image 4" />
+      </div>
+      <div class="gallery-main">
+        <img src="images/product_1.jpg" alt="Chamkili Peplum Set — pink floral peplum kurti with matching printed pants" class="gallery-main-img" id="gallery-main-img" />
+        <button class="gallery-nav gallery-nav--prev" aria-label="Previous image">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="gallery-nav gallery-nav--next" aria-label="Next image">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="pdp-info">
+      <p class="pdp-collection">Monsoon Diaries Collection</p>
+      <h1 class="pdp-title">Chamkili Peplum Set</h1>
+
+      <div class="pdp-rating-row">
+        <span class="stars" aria-hidden="true" style="color:#e8a820;font-size:14px;letter-spacing:2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span style="font-size:var(--font-size-xs);color:#888;">4.8 (134 reviews)</span>
+        <a href="#reviews" class="pdp-rating-link">Read reviews</a>
+      </div>
+
+      <div class="pdp-price-row">
+        <span class="pdp-price-curr" aria-label="Price: Rs. 1299">Rs. 1,299</span>
+        <span class="pdp-price-orig" aria-label="Original price: Rs. 1899">Rs. 1,899</span>
+        <span class="pdp-price-disc">32% off</span>
+      </div>
+      <p style="font-size:var(--font-size-xs);color:#888;">Inclusive of all taxes. Free delivery on orders above Rs. 999.</p>
+
+      <!-- Colour -->
+      <div>
+        <p class="pdp-section-label">Colour — <span style="font-weight:400;text-transform:none;letter-spacing:0;" id="selected-colour">Pink</span></p>
+        <div class="product-swatches" aria-label="Select colour" id="colour-swatches">
+          <button class="swatch swatch--active" style="background:#f2a8a8;" aria-label="Pink" aria-pressed="true" data-colour="Pink"></button>
+          <button class="swatch" style="background:#a8c8f2;" aria-label="Blue" aria-pressed="false" data-colour="Blue"></button>
+          <button class="swatch" style="background:#a8f2c8;" aria-label="Mint" aria-pressed="false" data-colour="Mint"></button>
+        </div>
+      </div>
+
+      <!-- Size -->
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-8);">
+          <p class="pdp-section-label" style="margin:0;">Select Size</p>
+          <a href="sizing.html" style="font-size:var(--font-size-xs);color:var(--color-text-inverse);text-decoration:underline;">Size Guide</a>
+        </div>
+        <div class="size-selector" role="group" aria-label="Select size" id="size-selector">
+          <button class="size-btn" aria-label="XS" aria-pressed="false" data-size="XS">XS</button>
+          <button class="size-btn" aria-label="S" aria-pressed="false" data-size="S">S</button>
+          <button class="size-btn" aria-label="M" aria-pressed="false" data-size="M">M</button>
+          <button class="size-btn" aria-label="L" aria-pressed="false" data-size="L">L</button>
+          <button class="size-btn" aria-label="XL" aria-pressed="false" data-size="XL">XL</button>
+          <button class="size-btn out-of-stock" aria-label="2XL — out of stock" aria-disabled="true" data-size="2XL">2XL</button>
+          <button class="size-btn" aria-label="3XL" aria-pressed="false" data-size="3XL">3XL</button>
+        </div>
+        <p class="size-error" id="size-error" role="alert">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Please select a size before adding to cart.
+        </p>
+      </div>
+
+      <!-- Quantity -->
+      <div>
+        <p class="pdp-section-label">Quantity</p>
+        <div class="qty-stepper" role="group" aria-label="Product quantity">
+          <button class="qty-btn" id="qty-minus" aria-label="Decrease quantity" disabled>&#8722;</button>
+          <input type="number" class="qty-value" id="qty-value" value="1" min="1" max="10" aria-label="Current quantity: 1" readonly />
+          <button class="qty-btn" id="qty-plus" aria-label="Increase quantity">&#43;</button>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="pdp-actions">
+        <a href="cart.html" class="btn btn--primary" id="pdp-atc" aria-label="Add Chamkili Peplum Set to cart">Add to Cart</a>
+        <button class="pdp-wishlist-btn" id="pdp-wishlist" aria-label="Add to wishlist" aria-pressed="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Save to Wishlist
+        </button>
+      </div>
+
+      <!-- Delivery check -->
+      <div>
+        <p class="pdp-section-label">Check Delivery</p>
+        <div class="delivery-check">
+          <label for="pincode-input" class="sr-only">Enter pincode</label>
+          <input type="text" id="pincode-input" class="delivery-input" placeholder="Enter 6-digit pincode" maxlength="6" pattern="[0-9]{6}" aria-label="Delivery pincode" />
+          <button class="delivery-check-btn" id="check-delivery-btn" aria-label="Check delivery availability">Check</button>
+        </div>
+        <p class="delivery-result" id="delivery-result" aria-live="polite" hidden>&#10003; Delivery available in 3–5 business days. Free shipping!</p>
+      </div>
+
+      <!-- Details Accordion -->
+      <div class="pdp-accordion-wrap">
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="true" aria-controls="acc-desc" id="acc-desc-btn">
+              Product Description
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-panel open" id="acc-desc" role="region" aria-labelledby="acc-desc-btn">
+              <div class="accordion-body">
+                <p>The Chamkili Peplum Set is everything you love about ethnic fashion — effortlessly elevated. Featuring a beautiful peplum silhouette with delicate floral block prints and matching straight-leg pants. Perfect for mehendis, casual outings, and Sunday brunches.</p>
+                <ul style="margin-top:var(--space-8);padding-left:var(--space-md);display:flex;flex-direction:column;gap:4px;">
+                  <li>100% Premium Cotton</li>
+                  <li>Block print floral motif</li>
+                  <li>Peplum silhouette with pintuck detailing</li>
+                  <li>Matching full-length printed pants</li>
+                  <li>Button-down front with lace trim</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-care" id="acc-care-btn">
+              Fabric &amp; Care
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-panel" id="acc-care" role="region" aria-labelledby="acc-care-btn">
+              <div class="accordion-body">
+                <p><strong>Fabric:</strong> 100% Cotton (ethically sourced, GOTS certified)</p>
+                <p style="margin-top:var(--space-8);"><strong>Care Instructions:</strong></p>
+                <ul style="padding-left:var(--space-md);margin-top:4px;display:flex;flex-direction:column;gap:4px;">
+                  <li>Machine wash cold, gentle cycle</li>
+                  <li>Do not bleach</li>
+                  <li>Tumble dry low or lay flat to dry</li>
+                  <li>Iron on medium heat from inside</li>
+                  <li>Dry clean if preferred</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-fit" id="acc-fit-btn">
+              Fit &amp; Sizing
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-panel" id="acc-fit" role="region" aria-labelledby="acc-fit-btn">
+              <div class="accordion-body">
+                <p>The model is 5'5&quot; and wears size S. This style has a relaxed, slightly oversized fit at the peplum. We recommend sizing down if you prefer a more tailored look.</p>
+                <p style="margin-top:var(--space-8);"><a href="sizing.html" style="color:var(--color-text-inverse);text-decoration:underline;">View Full Size Guide &#x203A;</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-ship" id="acc-ship-btn">
+              Shipping &amp; Returns
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-panel" id="acc-ship" role="region" aria-labelledby="acc-ship-btn">
+              <div class="accordion-body">
+                <p>Free delivery on orders above Rs. 999. Standard delivery in 3–5 business days. Express delivery available at checkout.</p>
+                <p style="margin-top:var(--space-8);">7-day hassle-free returns. Item must be unworn, unwashed and in original packaging. <a href="returns.html" style="color:var(--color-text-inverse);text-decoration:underline;">Full return policy &#x203A;</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /pdp-info -->
+  </div><!-- /pdp-layout -->
+
+  <!-- You May Also Like -->
+  <section class="also-like" aria-labelledby="also-like-heading">
+    <div class="also-like-inner">
+      <div class="section-header"><h2 class="section-title" id="also-like-heading">You May Also Like</h2><a href="collections.html?cat=kurtis" class="section-link">View all &#x203A;</a></div>
+      <div class="also-like-grid" role="list">
+        <article class="product-card" role="listitem">
+          <div class="product-card-media"><a href="product.html?id=teal-cape" class="product-media-link" tabindex="-1" aria-hidden="true"><img src="images/product_2.jpg" alt="Teal Majesty Cape Set" class="product-img product-img--primary" loading="lazy" /></a>
+          <button class="product-wishlist-btn" aria-label="Add Teal Majesty to wishlist" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          <div class="product-quick-actions"><a href="product.html?id=teal-cape" class="quick-view-btn">Quick View</a></div></div>
+          <div class="product-card-info"><h3 class="product-name"><a href="product.html?id=teal-cape" class="product-name-link">Teal Majesty Cape Set</a></h3><div class="product-pricing"><span class="price-current">Rs. 3,499</span></div><a href="cart.html?action=add&id=teal-cape" class="btn btn--add-to-cart">Add to Cart</a></div>
+        </article>
+        <article class="product-card" role="listitem">
+          <div class="product-card-media"><a href="product.html?id=mustard-coord" class="product-media-link" tabindex="-1" aria-hidden="true"><img src="images/product_3.jpg" alt="Sunshine Block Print Set" class="product-img product-img--primary" loading="lazy" /></a>
+          <button class="product-wishlist-btn" aria-label="Add Sunshine Set to wishlist" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          <div class="product-quick-actions"><a href="product.html?id=mustard-coord" class="quick-view-btn">Quick View</a></div></div>
+          <div class="product-card-info"><h3 class="product-name"><a href="product.html?id=mustard-coord" class="product-name-link">Sunshine Block Print Set</a></h3><div class="product-pricing"><span class="price-current">Rs. 1,599</span><span class="price-original">Rs. 2,199</span><span class="price-discount">27% off</span></div><a href="cart.html?action=add&id=mustard-coord" class="btn btn--add-to-cart">Add to Cart</a></div>
+        </article>
+        <article class="product-card" role="listitem">
+          <div class="product-card-media"><a href="product.html?id=crimson-backless" class="product-media-link" tabindex="-1" aria-hidden="true"><img src="images/product_4.jpg" alt="Crimson Drama Backless Top" class="product-img product-img--primary" loading="lazy" /></a>
+          <button class="product-wishlist-btn" aria-label="Add Crimson Drama to wishlist" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          <div class="product-quick-actions"><a href="product.html?id=crimson-backless" class="quick-view-btn">Quick View</a></div></div>
+          <div class="product-card-info"><h3 class="product-name"><a href="product.html?id=crimson-backless" class="product-name-link">Crimson Drama Backless Top</a></h3><div class="product-pricing"><span class="price-current">Rs. 1,799</span><span class="price-discount">25% off</span></div><a href="cart.html?action=add&id=crimson-backless" class="btn btn--add-to-cart">Add to Cart</a></div>
+        </article>
+        <article class="product-card" role="listitem">
+          <div class="product-card-media"><a href="product.html?id=pooja-baddie" class="product-media-link" tabindex="-1" aria-hidden="true"><div class="product-img-placeholder" style="background:linear-gradient(160deg,#d4c5f9,#7c4dba);"><span class="placeholder-icon" aria-hidden="true">&#x1FAB7;</span></div></a>
+          <button class="product-wishlist-btn" aria-label="Add Pooja Baddie to wishlist" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          <div class="product-quick-actions"><a href="product.html?id=pooja-baddie" class="quick-view-btn">Quick View</a></div></div>
+          <div class="product-card-info"><h3 class="product-name"><a href="product.html?id=pooja-baddie" class="product-name-link">Pooja Baddie Kurti</a></h3><div class="product-pricing"><span class="price-current">Rs. 999</span><span class="price-discount">33% off</span></div><a href="cart.html?action=add&id=pooja-baddie" class="btn btn--add-to-cart">Add to Cart</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews-section" aria-labelledby="reviews-heading" id="reviews">
+    <div class="reviews-inner">
+      <h2 class="section-title" id="reviews-heading">Customer Reviews</h2>
+      <div class="reviews-summary">
+        <div class="avg-score">
+          <div class="avg-num" aria-label="4.8 average rating">4.8</div>
+          <div class="avg-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="avg-label">Based on 134 reviews</div>
+        </div>
+        <div class="rating-histogram" aria-label="Rating distribution">
+          <div class="histogram-row"><span class="histogram-label">5</span><div class="histogram-track"><div class="histogram-fill" style="width:78%;"></div></div><span class="histogram-count">104</span></div>
+          <div class="histogram-row"><span class="histogram-label">4</span><div class="histogram-track"><div class="histogram-fill" style="width:15%;"></div></div><span class="histogram-count">20</span></div>
+          <div class="histogram-row"><span class="histogram-label">3</span><div class="histogram-track"><div class="histogram-fill" style="width:5%;"></div></div><span class="histogram-count">7</span></div>
+          <div class="histogram-row"><span class="histogram-label">2</span><div class="histogram-track"><div class="histogram-fill" style="width:2%;"></div></div><span class="histogram-count">2</span></div>
+          <div class="histogram-row"><span class="histogram-label">1</span><div class="histogram-track"><div class="histogram-fill" style="width:1%;"></div></div><span class="histogram-count">1</span></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-lg);">
+        <h3 style="font-family:var(--font-family-primary);font-size:20px;font-weight:500;">134 Reviews</h3>
+        <a href="contact.html" class="btn btn--outline">Write a Review</a>
+      </div>
+      <div>
+        <div class="review-card">
+          <div class="review-rating" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-title">"Absolutely stunning!"</p>
+          <p class="review-body">Got so many compliments at my cousin's mehendi. The fabric is incredibly soft and breathable. The fit was perfect in size M. Will definitely order again!</p>
+          <p class="review-meta">Priya M. — Mumbai &nbsp;&#183;&nbsp; <span class="review-verified">&#10003; Verified Purchase</span> &nbsp;&#183;&nbsp; 12 Oct 2026</p>
+        </div>
+        <div class="review-card">
+          <div class="review-rating" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-title">"Perfect for festivals!"</p>
+          <p class="review-body">Bought this for Navratri and it was the perfect choice. Loved how it was comfortable to dance in yet looked so elegant. The pink colour is vibrant and matches exactly with the photos.</p>
+          <p class="review-meta">Shreya K. — Ahmedabad &nbsp;&#183;&nbsp; <span class="review-verified">&#10003; Verified Purchase</span> &nbsp;&#183;&nbsp; 8 Oct 2026</p>
+        </div>
+        <div class="review-card">
+          <div class="review-rating" aria-label="4 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <p class="review-title">"Great quality, slightly long"</p>
+          <p class="review-body">The fabric and print quality is excellent. Only feedback is the top runs a bit long for my 5'2" frame. But overall very happy with the purchase!</p>
+          <p class="review-meta">Ananya R. — Bangalore &nbsp;&#183;&nbsp; <span class="review-verified">&#10003; Verified Purchase</span> &nbsp;&#183;&nbsp; 5 Oct 2026</p>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-xl);text-align:center;">
+        <button class="btn btn--outline" aria-label="Load more reviews">Load More Reviews</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="index.html" class="footer-logo" aria-label="Slayvana home">SLAYVANA</a><p class="footer-tagline">Modern ethnic fusion fashion — comfort meets edge.</p></div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <div class="footer-nav-group"><h3 class="footer-nav-heading">Shop</h3><ul role="list"><li><a href="collections.html" class="footer-link">New Arrivals</a></li><li><a href="collections.html?cat=kurtis" class="footer-link">Kurtis</a></li><li><a href="collections.html?cat=sale" class="footer-link footer-link--sale">Sale</a></li></ul></div>
+      <div class="footer-nav-group"><h3 class="footer-nav-heading">Help</h3><ul role="list"><li><a href="faq.html" class="footer-link">FAQs</a></li><li><a href="sizing.html" class="footer-link">Size Guide</a></li><li><a href="returns.html" class="footer-link">Returns</a></li><li><a href="contact.html" class="footer-link">Contact</a></li></ul></div>
+      <div class="footer-nav-group"><h3 class="footer-nav-heading">Company</h3><ul role="list"><li><a href="about.html" class="footer-link">About</a></li><li><a href="privacy.html" class="footer-link">Privacy</a></li><li><a href="terms.html" class="footer-link">Terms</a></li></ul></div>
+    </nav>
+  </div>
+  <div class="footer-bottom"><p class="footer-copy">&#169; 2026 Slayvana. All rights reserved.</p></div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<script src="main.js"></script>
+<script>
+  // ── Gallery ──
+  const thumbs = document.querySelectorAll('.gallery-thumb');
+  const mainImg = document.getElementById('gallery-main-img');
+  let currentIdx = 0;
+  thumbs.forEach((t, i) => {
+    t.addEventListener('click', () => { setImage(i); });
+    t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setImage(i); } });
+  });
+  function setImage(i) {
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumbs[i].classList.add('active');
+    mainImg.src = thumbs[i].src;
+    mainImg.alt = thumbs[i].alt;
+    currentIdx = i;
+  }
+  document.querySelector('.gallery-nav--prev').addEventListener('click', () => setImage((currentIdx - 1 + thumbs.length) % thumbs.length));
+  document.querySelector('.gallery-nav--next').addEventListener('click', () => setImage((currentIdx + 1) % thumbs.length));
+
+  // ── Colour swatches ──
+  const colourSwatches = document.querySelectorAll('#colour-swatches .swatch');
+  const selectedColourLabel = document.getElementById('selected-colour');
+  colourSwatches.forEach(s => {
+    s.addEventListener('click', () => {
+      colourSwatches.forEach(x => { x.classList.remove('swatch--active'); x.setAttribute('aria-pressed','false'); });
+      s.classList.add('swatch--active');
+      s.setAttribute('aria-pressed','true');
+      selectedColourLabel.textContent = s.dataset.colour;
+    });
+  });
+
+  // ── Size selector ──
+  let selectedSize = null;
+  const sizeButtons = document.querySelectorAll('#size-selector .size-btn:not(.out-of-stock)');
+  sizeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sizeButtons.forEach(b => { b.classList.remove('selected'); b.setAttribute('aria-pressed','false'); });
+      btn.classList.add('selected'); btn.setAttribute('aria-pressed','true');
+      selectedSize = btn.dataset.size;
+      document.getElementById('size-error').classList.remove('visible');
+    });
+    btn.addEventListener('keydown', e => {
+      const all = [...sizeButtons]; const idx = all.indexOf(btn);
+      if (e.key === 'ArrowRight') { e.preventDefault(); all[(idx+1)%all.length].focus(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); all[(idx-1+all.length)%all.length].focus(); }
+    });
+  });
+
+  // ── Quantity stepper ──
+  const qtyMinus = document.getElementById('qty-minus');
+  const qtyPlus  = document.getElementById('qty-plus');
+  const qtyVal   = document.getElementById('qty-value');
+  qtyPlus.addEventListener('click', () => { if (+qtyVal.value < 10) { qtyVal.value = +qtyVal.value + 1; qtyMinus.disabled = false; if (+qtyVal.value === 10) qtyPlus.disabled = true; } });
+  qtyMinus.addEventListener('click', () => { if (+qtyVal.value > 1) { qtyVal.value = +qtyVal.value - 1; qtyPlus.disabled = false; if (+qtyVal.value === 1) qtyMinus.disabled = true; } });
+
+  // ── Add to cart ──
+  document.getElementById('pdp-atc').addEventListener('click', e => {
+    if (!selectedSize) { e.preventDefault(); document.getElementById('size-error').classList.add('visible'); document.querySelector('#size-selector .size-btn').focus(); return; }
+  });
+
+  // ── Wishlist ──
+  document.getElementById('pdp-wishlist').addEventListener('click', function() {
+    const p = this.getAttribute('aria-pressed') === 'true';
+    this.setAttribute('aria-pressed', String(!p));
+    this.innerHTML = p
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Save to Wishlist'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="#c0392b" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Saved!';
+  });
+
+  // ── Delivery check ──
+  document.getElementById('check-delivery-btn').addEventListener('click', () => {
+    const pin = document.getElementById('pincode-input').value;
+    const result = document.getElementById('delivery-result');
+    if (/^\d{6}$/.test(pin)) { result.hidden = false; }
+    else { result.hidden = true; document.getElementById('pincode-input').focus(); }
+  });
+
+  // ── Accordion ──
+  document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+      trigger.setAttribute('aria-expanded', String(!expanded));
+      panel.classList.toggle('open', !expanded);
+    });
+  });
+
+  // ── Product cards ──
+  document.querySelectorAll('.product-wishlist-btn').forEach(btn => {
+    btn.addEventListener('click', () => { const p = btn.getAttribute('aria-pressed') === 'true'; btn.setAttribute('aria-pressed', String(!p)); });
+  });
+  document.querySelectorAll('.btn--add-to-cart').forEach(btn => {
+    btn.addEventListener('click', e => { e.preventDefault(); const orig = btn.textContent; btn.textContent = 'Added!'; btn.disabled = true; setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000); });
+  });
+</script>
+</body>
+</html>

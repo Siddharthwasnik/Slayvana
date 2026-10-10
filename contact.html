@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Slayvana</title>
+  <meta name="description" content="Reach out to Slayvana for any questions about your order, sizing, returns or general enquiries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-layout{max-width:var(--max-width);margin:0 auto;padding:var(--space-3xl) var(--space-lg);display:grid;grid-template-columns:1fr 400px;gap:var(--space-3xl);align-items:start;}
+    .contact-form-wrap{background:var(--color-text-tertiary);border:1px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:var(--space-xl);}
+    .contact-form{display:flex;flex-direction:column;gap:var(--space-md);}
+    .contact-panel-title{font-family:var(--font-family-primary);font-size:24px;font-weight:500;margin-bottom:var(--space-lg);}
+    .contact-info-card{display:flex;gap:var(--space-md);padding:var(--space-md) 0;border-bottom:1px solid var(--color-border-subtle);}
+    .contact-info-card:last-child{border-bottom:none;}
+    .contact-info-icon{font-size:22px;flex-shrink:0;width:36px;}
+    .contact-info-label{font-size:var(--font-size-xs);font-weight:var(--font-weight-semibold);letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:4px;}
+    .contact-info-value{font-size:var(--font-size-sm);color:var(--color-text-secondary);}
+    .contact-info-value a{color:var(--color-text-inverse);text-decoration:underline;}
+    .success-banner{background:#d1e7dd;border:1px solid #a3cfbb;border-radius:var(--radius-xs);padding:var(--space-md);font-size:var(--font-size-sm);color:#0a3622;display:none;align-items:center;gap:var(--space-8);}
+    .success-banner.visible{display:flex;}
+    @media(max-width:768px){.contact-layout{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="announcement-bar" role="banner"><div class="announcement-inner"><span>Free shipping on orders above Rs. 999</span><span class="ann-divider">|</span><span>Use code <strong>SLAY15</strong> for 15% off</span></div></div>
+<header class="site-header" id="site-header" role="banner"><div class="header-inner"><button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button><a href="index.html" class="site-logo" aria-label="Slayvana home"><span class="logo-text">SLAYVANA</span><span class="logo-tagline">Modern Ethnic Fusion</span></a><nav class="primary-nav" id="primary-nav" aria-label="Primary"><ul class="nav-list" role="list"><li class="nav-item"><a href="collections.html" class="nav-link">New Arrivals</a></li><li class="nav-item"><a href="collections.html?cat=kurtis" class="nav-link">Kurtis</a></li><li class="nav-item"><a href="collections.html?cat=sale" class="nav-link nav-link--sale">Sale</a></li><li class="nav-item"><a href="about.html" class="nav-link">About</a></li></ul></nav><div class="header-actions"><a href="account.html" class="action-btn" aria-label="My account"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a><a href="cart.html" class="action-btn cart-btn" aria-label="Cart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-badge" aria-hidden="true">2</span></a></div></div></header>
+<div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"><div class="mobile-nav-panel" id="mobile-nav-panel" role="dialog" aria-label="Navigation" aria-modal="true"><button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><div class="mobile-logo">SLAYVANA</div><nav><ul class="mobile-nav-list" role="list"><li><a href="index.html" class="mobile-nav-link">Home</a></li><li><a href="collections.html" class="mobile-nav-link">Shop</a></li><li><a href="cart.html" class="mobile-nav-link">Cart</a></li></ul></nav></div></div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="breadcrumb-inner"><span class="breadcrumb-item"><a href="index.html">Home</a></span><span class="breadcrumb-sep" aria-hidden="true">&#x203A;</span><span class="breadcrumb-item" aria-current="page">Contact Us</span></div></nav>
+<div class="page-hero"><div class="page-hero-inner"><p class="page-hero-eyebrow">Support</p><h1 class="page-hero-title">We&rsquo;re Here to Help</h1><p class="page-hero-sub">Our team typically responds within 4–6 hours on weekdays.</p></div></div>
+
+<main id="main-content">
+  <div class="contact-layout">
+    <div class="contact-form-wrap">
+      <h2 class="contact-panel-title">Send Us a Message</h2>
+      <div class="success-banner" id="contact-success" role="alert">
+        <span aria-hidden="true">&#10003;</span> Thank you! We've received your message and will get back to you within 4–6 hours.
+      </div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" for="c-name">Name <span class="required" aria-hidden="true">*</span></label><input type="text" id="c-name" class="form-input" placeholder="Your name" autocomplete="name" required /></div>
+          <div class="form-group"><label class="form-label" for="c-email">Email <span class="required" aria-hidden="true">*</span></label><input type="email" id="c-email" class="form-input" placeholder="you@email.com" autocomplete="email" required /><p class="form-error" id="c-email-err" hidden>Please enter a valid email.</p></div>
+        </div>
+        <div class="form-group"><label class="form-label" for="c-order">Order Number <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label><input type="text" id="c-order" class="form-input" placeholder="#SLV-20261005-4201" /></div>
+        <div class="form-group"><label class="form-label" for="c-subject">Subject <span class="required" aria-hidden="true">*</span></label>
+          <select id="c-subject" class="form-select" required>
+            <option value="">Select a topic</option>
+            <option value="order">Order Status / Tracking</option>
+            <option value="return">Return / Exchange</option>
+            <option value="size">Sizing Help</option>
+            <option value="payment">Payment Issue</option>
+            <option value="product">Product Question</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label" for="c-message">Message <span class="required" aria-hidden="true">*</span></label><textarea id="c-message" class="form-textarea" placeholder="Describe your query in detail..." required></textarea><p class="form-error" id="c-msg-err" hidden>Please write your message.</p></div>
+        <button type="submit" class="btn btn--primary" style="border-radius:var(--radius-xs);padding:14px;" aria-label="Send message">Send Message</button>
+      </form>
+    </div>
+
+    <div>
+      <h2 style="font-family:var(--font-family-primary);font-size:22px;font-weight:500;margin-bottom:var(--space-lg);">Other Ways to Reach Us</h2>
+      <div class="contact-info-card"><div class="contact-info-icon" aria-hidden="true">&#x1F4E7;</div><div><p class="contact-info-label">Email</p><p class="contact-info-value"><a href="mailto:support@slayvana.com">support@slayvana.com</a></p></div></div>
+      <div class="contact-info-card"><div class="contact-info-icon" aria-hidden="true">&#x1F4AC;</div><div><p class="contact-info-label">WhatsApp</p><p class="contact-info-value"><a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">+91 98765 43210</a><br /><span style="font-size:var(--font-size-xs);color:#888;">Mon–Sat, 10am–7pm IST</span></p></div></div>
+      <div class="contact-info-card"><div class="contact-info-icon" aria-hidden="true">&#x1F4F7;</div><div><p class="contact-info-label">Instagram DM</p><p class="contact-info-value"><a href="https://instagram.com/slayvana" target="_blank" rel="noopener noreferrer">@slayvana</a><br /><span style="font-size:var(--font-size-xs);color:#888;">Usually replies within 2 hours</span></p></div></div>
+      <div class="contact-info-card"><div class="contact-info-icon" aria-hidden="true">&#x1F55B;</div><div><p class="contact-info-label">Support Hours</p><p class="contact-info-value">Monday – Saturday<br />10:00 AM – 7:00 PM IST</p></div></div>
+
+      <div style="margin-top:var(--space-xl);padding:var(--space-md);background:var(--color-surface-raised);border-radius:var(--radius-sm);">
+        <p style="font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);margin-bottom:var(--space-8);">&#128161; Check our FAQ first</p>
+        <p style="font-size:var(--font-size-sm);color:#666;margin-bottom:var(--space-8);">Most questions about orders, sizing, and returns are answered in our FAQ.</p>
+        <a href="faq.html" class="btn btn--outline" style="font-size:var(--font-size-xs);padding:8px 16px;">Browse FAQs &#x203A;</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo"><div class="footer-inner"><div class="footer-brand"><a href="index.html" class="footer-logo">SLAYVANA</a><p class="footer-tagline">Modern ethnic fusion fashion.</p></div><nav class="footer-nav" aria-label="Footer"><div class="footer-nav-group"><h3 class="footer-nav-heading">Shop</h3><ul role="list"><li><a href="collections.html" class="footer-link">Collections</a></li><li><a href="collections.html?cat=sale" class="footer-link footer-link--sale">Sale</a></li></ul></div><div class="footer-nav-group"><h3 class="footer-nav-heading">Help</h3><ul role="list"><li><a href="faq.html" class="footer-link">FAQs</a></li><li><a href="sizing.html" class="footer-link">Size Guide</a></li><li><a href="shipping.html" class="footer-link">Shipping</a></li><li><a href="returns.html" class="footer-link">Returns</a></li></ul></div><div class="footer-nav-group"><h3 class="footer-nav-heading">Legal</h3><ul role="list"><li><a href="privacy.html" class="footer-link">Privacy</a></li><li><a href="terms.html" class="footer-link">Terms</a></li></ul></div></nav></div><div class="footer-bottom"><p class="footer-copy">&#169; 2026 Slayvana.</p></div></footer>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="main.js"></script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit',e=>{
+    e.preventDefault();
+    const email=document.getElementById('c-email').value.trim();
+    const msg=document.getElementById('c-message').value.trim();
+    let valid=true;
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('c-email-err').hidden=false;valid=false;}else document.getElementById('c-email-err').hidden=true;
+    if(!msg){document.getElementById('c-msg-err').hidden=false;valid=false;}else document.getElementById('c-msg-err').hidden=true;
+    if(!valid)return;
+    const btn=e.target.querySelector('[type="submit"]');
+    btn.textContent='Sending...';btn.disabled=true;
+    setTimeout(()=>{
+      document.getElementById('contact-success').classList.add('visible');
+      e.target.reset();btn.textContent='Send Message';btn.disabled=false;
+      document.getElementById('contact-success').scrollIntoView({behavior:'smooth',block:'nearest'});
+    },800);
+  });
+</script>
+</body></html>

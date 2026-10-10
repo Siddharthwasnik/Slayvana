@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slayvana — Modern Ethnic Fusion Fashion</title>
+  <meta name="description" content="Slayvana — Shop modern ethnic fusion fashion for women. Discover kurtis, co-ord sets, cape tops, and more. Fresh, edgy, traditional comfort with contemporary flair." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== ANNOUNCEMENT BAR ========== -->
+  <div class="announcement-bar" role="banner" aria-label="Site announcement">
+    <div class="announcement-inner">
+      <span>✦ Free shipping on orders above ₹999</span>
+      <span class="ann-divider">|</span>
+      <span>Use code <strong>SLAY15</strong> for 15% off your first order</span>
+      <span class="ann-divider">|</span>
+      <span>New arrivals every Friday ✦</span>
+    </div>
+  </div>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+
+      <!-- Mobile hamburger -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="index.html" class="site-logo" aria-label="Slayvana — home">
+        <span class="logo-text">SLAYVANA</span>
+        <span class="logo-tagline">Modern Ethnic Fusion</span>
+      </a>
+
+      <!-- Primary navigation -->
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item has-dropdown">
+            <a href="collections.html" class="nav-link" aria-haspopup="true" aria-expanded="false">New Arrivals</a>
+            <div class="nav-dropdown" role="region" aria-label="New Arrivals submenu">
+              <ul role="list">
+                <li><a href="collections.html?filter=week" class="dropdown-link">This Week's Drop</a></li>
+                <li><a href="collections.html?filter=festive" class="dropdown-link">Festive Edit</a></li>
+                <li><a href="collections.html?filter=capsule" class="dropdown-link">Capsule Collection</a></li>
+                <li><a href="collections.html?filter=trending" class="dropdown-link">Trending Now</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="collections.html?cat=kurtis" class="nav-link" aria-haspopup="true" aria-expanded="false">Kurtis</a>
+            <div class="nav-dropdown" role="region" aria-label="Kurtis submenu">
+              <ul role="list">
+                <li><a href="collections.html?style=peplum" class="dropdown-link">Peplum Kurtis</a></li>
+                <li><a href="collections.html?style=halter" class="dropdown-link">Halter Neck</a></li>
+                <li><a href="collections.html?style=cape" class="dropdown-link">Cape Tops</a></li>
+                <li><a href="collections.html?style=backless" class="dropdown-link">Backless Tops</a></li>
+                <li><a href="collections.html?style=a-line" class="dropdown-link">A-Line Kurtis</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="collections.html?cat=coord-sets" class="nav-link" aria-haspopup="true" aria-expanded="false">Co-ord Sets</a>
+            <div class="nav-dropdown" role="region" aria-label="Co-ord Sets submenu">
+              <ul role="list">
+                <li><a href="collections.html?style=twinning" class="dropdown-link">Twinning Sets</a></li>
+                <li><a href="collections.html?style=casual" class="dropdown-link">Casual Co-ords</a></li>
+                <li><a href="collections.html?style=festive-set" class="dropdown-link">Festive Sets</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="collections.html?cat=sale" class="nav-link nav-link--sale">Sale</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header actions -->
+      <div class="header-actions">
+        <button class="action-btn" id="search-toggle" aria-label="Open search" aria-expanded="false" aria-controls="search-overlay">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+        </button>
+        <a href="account.html" class="action-btn" aria-label="My account">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <a href="wishlist.html" class="action-btn" aria-label="Wishlist">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </a>
+        <a href="cart.html" class="action-btn cart-btn" aria-label="Shopping cart, 2 items">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" aria-hidden="true">2</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Search overlay -->
+    <div class="search-overlay" id="search-overlay" role="search" aria-hidden="true">
+      <div class="search-inner">
+        <label for="search-input" class="sr-only">Search products</label>
+        <input type="search" id="search-input" class="search-input" placeholder="Search for kurtis, co-ords, tops..." autocomplete="off" />
+        <button class="search-submit" aria-label="Submit search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+        </button>
+        <button class="search-close" id="search-close" aria-label="Close search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
+    <div class="mobile-nav-panel" id="mobile-nav-panel" role="dialog" aria-label="Navigation menu" aria-modal="true">
+      <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="mobile-logo">SLAYVANA</div>
+      <nav aria-label="Mobile navigation">
+        <ul class="mobile-nav-list" role="list">
+          <li><a href="collections.html" class="mobile-nav-link">New Arrivals</a></li>
+          <li><a href="collections.html?cat=kurtis" class="mobile-nav-link">Kurtis</a></li>
+          <li><a href="collections.html?style=peplum" class="mobile-nav-link mobile-nav-link--sub">Peplum Kurtis</a></li>
+          <li><a href="collections.html?style=halter" class="mobile-nav-link mobile-nav-link--sub">Halter Neck</a></li>
+          <li><a href="collections.html?style=cape" class="mobile-nav-link mobile-nav-link--sub">Cape Tops</a></li>
+          <li><a href="collections.html?cat=coord-sets" class="mobile-nav-link">Co-ord Sets</a></li>
+          <li><a href="collections.html?cat=sale" class="mobile-nav-link mobile-nav-link--sale">Sale</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li><a href="account.html" class="mobile-nav-link">My Account</a></li>
+          <li><a href="wishlist.html" class="mobile-nav-link">Wishlist</a></li>
+          <li><a href="cart.html" class="mobile-nav-link">Cart (2)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" aria-label="Hero - New collection">
+      <div class="hero-media">
+        <img src="images/hero_banner.jpg" alt="Model wearing a teal floral halter-neck kurti from the Spring Summer collection" class="hero-img" fetchpriority="high" />
+        <div class="hero-gradient"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Spring Summer 2026</p>
+        <h1 class="hero-headline">Where Tradition<br/>Meets <em>Edge</em></h1>
+        <p class="hero-sub">Modern ethnic fusion for the woman who refuses to choose between comfort and style.</p>
+        <div class="hero-actions">
+          <a href="collections.html" class="btn btn--primary" id="hero-shop-now">Shop the Collection</a>
+          <a href="collections.html?filter=new" class="btn btn--ghost" id="hero-new-arrivals">New Arrivals</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ========== MARQUEE STRIP ========== -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Peplum Kurtis</span><span class="marquee-dot">+</span>
+        <span>Halter Necks</span><span class="marquee-dot">+</span>
+        <span>Cape Tops</span><span class="marquee-dot">+</span>
+        <span>Co-ord Sets</span><span class="marquee-dot">+</span>
+        <span>Backless Designs</span><span class="marquee-dot">+</span>
+        <span>Twinning Sets</span><span class="marquee-dot">+</span>
+        <span>Block Prints</span><span class="marquee-dot">+</span>
+        <span>Chikankari</span><span class="marquee-dot">+</span>
+        <span>Festive Edits</span><span class="marquee-dot">+</span>
+        <span>Peplum Kurtis</span><span class="marquee-dot">+</span>
+        <span>Halter Necks</span><span class="marquee-dot">+</span>
+        <span>Cape Tops</span><span class="marquee-dot">+</span>
+        <span>Co-ord Sets</span><span class="marquee-dot">+</span>
+        <span>Backless Designs</span><span class="marquee-dot">+</span>
+        <span>Twinning Sets</span><span class="marquee-dot">+</span>
+        <span>Block Prints</span><span class="marquee-dot">+</span>
+        <span>Chikankari</span><span class="marquee-dot">+</span>
+        <span>Festive Edits</span><span class="marquee-dot">+</span>
+      </div>
+    </div>
+
+    <!-- ========== CATEGORY TILES ========== -->
+    <section class="category-section" aria-labelledby="categories-heading">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title" id="categories-heading">Shop by Style</h2>
+          <a href="collections.html" class="section-link" id="all-categories-link">View all &rarr;</a>
+        </div>
+        <div class="category-grid" role="list">
+          <a href="collections.html?style=peplum" class="category-tile" role="listitem" id="cat-peplum">
+            <div class="category-tile-bg" style="background: linear-gradient(135deg, #f2d1d1 0%, #e8a8a8 100%);">
+              <span class="category-icon" aria-hidden="true">&#x1F458;</span>
+            </div>
+            <div class="category-tile-content">
+              <span class="category-name">Peplum Kurtis</span>
+              <span class="category-count">48 styles</span>
+            </div>
+          </a>
+          <a href="collections.html?style=halter" class="category-tile" role="listitem" id="cat-halter">
+            <div class="category-tile-bg" style="background: linear-gradient(135deg, #c8e6e8 0%, #6bb8c0 100%);">
+              <span class="category-icon" aria-hidden="true">&#x2728;</span>
+            </div>
+            <div class="category-tile-content">
+              <span class="category-name">Halter Neck</span>
+              <span class="category-count">32 styles</span>
+            </div>
+          </a>
+          <a href="collections.html?style=cape" class="category-tile" role="listitem" id="cat-cape">
+            <div class="category-tile-bg" style="background: linear-gradient(135deg, #d4c5f9 0%, #9b7fd4 100%);">
+              <span class="category-icon" aria-hidden="true">&#x1F98B;</span>
+            </div>
+            <div class="category-tile-content">
+              <span class="category-name">Cape Tops</span>
+              <span class="category-count">19 styles</span>
+            </div>
+          </a>
+          <a href="collections.html?cat=coord-sets" class="category-tile" role="listitem" id="cat-coord">
+            <div class="category-tile-bg" style="background: linear-gradient(135deg, #fde8c8 0%, #e8a84a 100%);">
+              <span class="category-icon" aria-hidden="true">&#x1F457;</span>
+            </div>
+            <div class="category-tile-content">
+              <span class="category-name">Co-ord Sets</span>
+              <span class="category-count">61 styles</span>
+            </div>
+          </a>
+          <a href="collections.html?style=backless" class="category-tile" role="listitem" id="cat-backless">
+            <div class="category-tile-bg" style="background: linear-gradient(135deg, #ffd6d6 0%, #c0392b88 100%);">
+              <span class="category-icon" aria-hidden="true">&#x1F339;</span>
+            </div>
+            <div class="category-tile-content">
+              <span class="category-name">Backless</span>
+              <span class="category-count">24 styles</span>
+            </div>
+          </a>
+          <a href="collections.html?filter=festive" class="category-tile" role="listitem" id="cat-festive">
+            <div class="category-tile-bg" style="background: linear-gradient(135deg, #fff3cd 0%, #c8a020 100%);">
+              <span class="category-icon" aria-hidden="true">&#x1FA94;</span>
+            </div>
+            <div class="category-tile-content">
+              <span class="category-name">Festive Edit</span>
+              <span class="category-count">35 styles</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURED PRODUCTS ========== -->
+    <section class="products-section" aria-labelledby="featured-heading">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title" id="featured-heading">New Arrivals</h2>
+          <a href="collections.html?filter=new" class="section-link" id="all-new-arrivals-link">View all &rarr;</a>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="filter-tabs" role="tablist" aria-label="Filter products by style">
+          <button class="filter-tab filter-tab--active" role="tab" aria-selected="true" id="tab-all" data-filter="all">All</button>
+          <button class="filter-tab" role="tab" aria-selected="false" id="tab-kurtis" data-filter="kurtis">Kurtis</button>
+          <button class="filter-tab" role="tab" aria-selected="false" id="tab-coord" data-filter="coord">Co-ords</button>
+          <button class="filter-tab" role="tab" aria-selected="false" id="tab-tops" data-filter="tops">Tops</button>
+          <button class="filter-tab" role="tab" aria-selected="false" id="tab-festive-filter" data-filter="festive">Festive</button>
+        </div>
+
+        <!-- Product grid -->
+        <div class="product-grid" id="product-grid" role="list" aria-label="Featured products">
+
+          <!-- Product 1 -->
+          <article class="product-card" role="listitem" data-category="kurtis" id="product-chamkili">
+            <div class="product-card-media">
+              <a href="product.html?id=chamkili" class="product-media-link" tabindex="-1" aria-hidden="true">
+                <img src="images/product_1.jpg" alt="Chamkili - Pink floral peplum kurti set" class="product-img product-img--primary" loading="lazy" />
+                <img src="images/product_1.jpg" alt="Chamkili - Pink floral peplum kurti set, alternate view" class="product-img product-img--hover" loading="lazy" />
+              </a>
+              <div class="product-badges" aria-label="Product badges">
+                <span class="badge badge--new" aria-label="New arrival">New</span>
+              </div>
+              <button class="product-wishlist-btn" aria-label="Add Chamkili to wishlist" aria-pressed="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+              <div class="product-quick-actions">
+                <a href="product.html?id=chamkili" class="quick-view-btn" id="quick-chamkili">Quick View</a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-meta">
+                <span class="product-collection">Monsoon Diaries</span>
+              </div>
+              <h3 class="product-name">
+                <a href="product.html?id=chamkili" class="product-name-link">Chamkili Peplum Set</a>
+              </h3>
+              <div class="product-rating" aria-label="4.8 out of 5 stars, 134 reviews">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(134)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" aria-label="Current price">Rs. 1,299</span>
+                <span class="price-original" aria-label="Original price">Rs. 1,899</span>
+                <span class="price-discount" aria-label="Discount">32% off</span>
+              </div>
+              <div class="product-swatches" aria-label="Available colors">
+                <button class="swatch swatch--active" style="background:#f2a8a8;" aria-label="Pink - selected" aria-pressed="true"></button>
+                <button class="swatch" style="background:#a8c8f2;" aria-label="Blue" aria-pressed="false"></button>
+                <button class="swatch" style="background:#a8f2c8;" aria-label="Mint" aria-pressed="false"></button>
+              </div>
+              <a href="cart.html?action=add&id=chamkili" class="btn btn--add-to-cart" id="atc-chamkili" aria-label="Add Chamkili Peplum Set to cart">Add to Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card" role="listitem" data-category="tops" id="product-teal-cape">
+            <div class="product-card-media">
+              <a href="product.html?id=teal-cape" class="product-media-link" tabindex="-1" aria-hidden="true">
+                <img src="images/product_2.jpg" alt="Teal cape top with gold embroidery and wide-leg pants" class="product-img product-img--primary" loading="lazy" />
+                <img src="images/product_2.jpg" alt="Teal cape top alternate view" class="product-img product-img--hover" loading="lazy" />
+              </a>
+              <div class="product-badges" aria-label="Product badges">
+                <span class="badge badge--hot" aria-label="Bestseller">Bestseller</span>
+              </div>
+              <button class="product-wishlist-btn" aria-label="Add Teal Majesty to wishlist" aria-pressed="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+              <div class="product-quick-actions">
+                <a href="product.html?id=teal-cape" class="quick-view-btn" id="quick-teal-cape">Quick View</a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-meta">
+                <span class="product-collection">Festive Edit</span>
+              </div>
+              <h3 class="product-name">
+                <a href="product.html?id=teal-cape" class="product-name-link">Teal Majesty Cape Set</a>
+              </h3>
+              <div class="product-rating" aria-label="4.9 out of 5 stars, 89 reviews">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(89)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" aria-label="Current price">Rs. 3,499</span>
+              </div>
+              <div class="product-swatches" aria-label="Available colors">
+                <button class="swatch swatch--active" style="background:#2a8c9c;" aria-label="Teal - selected" aria-pressed="true"></button>
+                <button class="swatch" style="background:#722c8c;" aria-label="Purple" aria-pressed="false"></button>
+              </div>
+              <a href="cart.html?action=add&id=teal-cape" class="btn btn--add-to-cart" id="atc-teal-cape" aria-label="Add Teal Majesty Cape Set to cart">Add to Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card" role="listitem" data-category="coord" id="product-mustard">
+            <div class="product-card-media">
+              <a href="product.html?id=mustard-coord" class="product-media-link" tabindex="-1" aria-hidden="true">
+                <img src="images/product_3.jpg" alt="Mustard block print co-ord set with matching pants" class="product-img product-img--primary" loading="lazy" />
+                <img src="images/product_3.jpg" alt="Mustard co-ord set alternate view" class="product-img product-img--hover" loading="lazy" />
+              </a>
+              <div class="product-badges" aria-label="Product badges">
+                <span class="badge badge--new" aria-label="New arrival">New</span>
+              </div>
+              <button class="product-wishlist-btn" aria-label="Add Sunshine Coord Set to wishlist" aria-pressed="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+              <div class="product-quick-actions">
+                <a href="product.html?id=mustard-coord" class="quick-view-btn" id="quick-mustard">Quick View</a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-meta">
+                <span class="product-collection">Summer Diaries</span>
+              </div>
+              <h3 class="product-name">
+                <a href="product.html?id=mustard-coord" class="product-name-link">Sunshine Block Print Set</a>
+              </h3>
+              <div class="product-rating" aria-label="4.7 out of 5 stars, 201 reviews">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(201)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" aria-label="Current price">Rs. 1,599</span>
+                <span class="price-original" aria-label="Original price">Rs. 2,199</span>
+                <span class="price-discount" aria-label="Discount">27% off</span>
+              </div>
+              <div class="product-swatches" aria-label="Available colors">
+                <button class="swatch swatch--active" style="background:#e8a820;" aria-label="Mustard - selected" aria-pressed="true"></button>
+                <button class="swatch" style="background:#208c48;" aria-label="Green" aria-pressed="false"></button>
+                <button class="swatch" style="background:#c84020;" aria-label="Rust" aria-pressed="false"></button>
+              </div>
+              <a href="cart.html?action=add&id=mustard-coord" class="btn btn--add-to-cart" id="atc-mustard" aria-label="Add Sunshine Block Print Set to cart">Add to Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card" role="listitem" data-category="tops" id="product-crimson">
+            <div class="product-card-media">
+              <a href="product.html?id=crimson-backless" class="product-media-link" tabindex="-1" aria-hidden="true">
+                <img src="images/product_4.jpg" alt="Crimson backless tie-up top with embroidery" class="product-img product-img--primary" loading="lazy" />
+                <img src="images/product_4.jpg" alt="Crimson backless top alternate view" class="product-img product-img--hover" loading="lazy" />
+              </a>
+              <div class="product-badges" aria-label="Product badges">
+                <span class="badge badge--limited" aria-label="Limited edition">Limited</span>
+              </div>
+              <button class="product-wishlist-btn" aria-label="Add Crimson Drama to wishlist" aria-pressed="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+              <div class="product-quick-actions">
+                <a href="product.html?id=crimson-backless" class="quick-view-btn" id="quick-crimson">Quick View</a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-meta">
+                <span class="product-collection">Baddie Edit</span>
+              </div>
+              <h3 class="product-name">
+                <a href="product.html?id=crimson-backless" class="product-name-link">Crimson Drama Backless Top</a>
+              </h3>
+              <div class="product-rating" aria-label="4.6 out of 5 stars, 67 reviews">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <span class="rating-count">(67)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" aria-label="Current price">Rs. 1,799</span>
+                <span class="price-original" aria-label="Original price">Rs. 2,399</span>
+                <span class="price-discount" aria-label="Discount">25% off</span>
+              </div>
+              <div class="product-swatches" aria-label="Available colors">
+                <button class="swatch swatch--active" style="background:#8c1c1c;" aria-label="Crimson - selected" aria-pressed="true"></button>
+                <button class="swatch" style="background:#1c3c8c;" aria-label="Navy" aria-pressed="false"></button>
+              </div>
+              <a href="cart.html?action=add&id=crimson-backless" class="btn btn--add-to-cart" id="atc-crimson" aria-label="Add Crimson Drama Backless Top to cart">Add to Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 5 -->
+          <article class="product-card" role="listitem" data-category="kurtis festive" id="product-pooja-baddie">
+            <div class="product-card-media">
+              <a href="product.html?id=pooja-baddie" class="product-media-link" tabindex="-1" aria-hidden="true">
+                <div class="product-img-placeholder" style="background: linear-gradient(160deg, #d4c5f9 0%, #7c4dba 60%, #3d1f7a 100%);">
+                  <span class="placeholder-icon" aria-hidden="true">&#x1FAB7;</span>
+                </div>
+              </a>
+              <div class="product-badges" aria-label="Product badges">
+                <span class="badge badge--hot" aria-label="Trending">Trending</span>
+              </div>
+              <button class="product-wishlist-btn" aria-label="Add Pooja Baddie to wishlist" aria-pressed="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+              <div class="product-quick-actions">
+                <a href="product.html?id=pooja-baddie" class="quick-view-btn" id="quick-pooja">Quick View</a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-meta">
+                <span class="product-collection">Festive Edit</span>
+              </div>
+              <h3 class="product-name">
+                <a href="product.html?id=pooja-baddie" class="product-name-link">Pooja Baddie Kurti</a>
+              </h3>
+              <div class="product-rating" aria-label="4.9 out of 5 stars, 312 reviews">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(312)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" aria-label="Current price">Rs. 999</span>
+                <span class="price-original" aria-label="Original price">Rs. 1,499</span>
+                <span class="price-discount" aria-label="Discount">33% off</span>
+              </div>
+              <div class="product-swatches" aria-label="Available colors">
+                <button class="swatch swatch--active" style="background:#7c4dba;" aria-label="Purple - selected" aria-pressed="true"></button>
+                <button class="swatch" style="background:#c84080;" aria-label="Pink" aria-pressed="false"></button>
+                <button class="swatch" style="background:#204080;" aria-label="Indigo" aria-pressed="false"></button>
+              </div>
+              <a href="cart.html?action=add&id=pooja-baddie" class="btn btn--add-to-cart" id="atc-pooja" aria-label="Add Pooja Baddie Kurti to cart">Add to Cart</a>
+            </div>
+          </article>
+
+          <!-- Product 6 -->
+          <article class="product-card" role="listitem" data-category="coord" id="product-monsoon">
+            <div class="product-card-media">
+              <a href="product.html?id=monsoon-twinning" class="product-media-link" tabindex="-1" aria-hidden="true">
+                <div class="product-img-placeholder" style="background: linear-gradient(160deg, #c8f2e8 0%, #2c9c70 60%, #1a5c42 100%);">
+                  <span class="placeholder-icon" aria-hidden="true">&#x1F33F;</span>
+                </div>
+              </a>
+              <div class="product-badges" aria-label="Product badges">
+                <span class="badge badge--new" aria-label="New arrival">New</span>
+              </div>
+              <button class="product-wishlist-btn" aria-label="Add Monsoon Twinning Set to wishlist" aria-pressed="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+              <div class="product-quick-actions">
+                <a href="product.html?id=monsoon-twinning" class="quick-view-btn" id="quick-monsoon">Quick View</a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-meta">
+                <span class="product-collection">Monsoon Diaries</span>
+              </div>
+              <h3 class="product-name">
+                <a href="product.html?id=monsoon-twinning" class="product-name-link">Monsoon Twinning Set</a>
+              </h3>
+              <div class="product-rating" aria-label="4.8 out of 5 stars, 156 reviews">
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="rating-count">(156)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="price-current" aria-label="Current price">Rs. 1,899</span>
+              </div>
+              <div class="product-swatches" aria-label="Available colors">
+                <button class="swatch swatch--active" style="background:#2c9c70;" aria-label="Sage - selected" aria-pressed="true"></button>
+                <button class="swatch" style="background:#9c7c2c;" aria-label="Khaki" aria-pressed="false"></button>
+              </div>
+              <a href="cart.html?action=add&id=monsoon-twinning" class="btn btn--add-to-cart" id="atc-monsoon" aria-label="Add Monsoon Twinning Set to cart">Add to Cart</a>
+            </div>
+          </article>
+
+        </div>
+        <div class="load-more-wrap">
+          <a href="collections.html" class="btn btn--outline btn--lg" id="load-more-products">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDITORIAL BANNER ========== -->
+    <section class="editorial-banner" aria-label="Festive season editorial">
+      <div class="editorial-inner">
+        <div class="editorial-text">
+          <p class="editorial-eyebrow" aria-hidden="true">The Festive Edit</p>
+          <h2 class="editorial-headline">Dress for the Occasion,<br/><em>Own the Room</em></h2>
+          <p class="editorial-body">From Diwali nights to Sunday brunches - our festive-ready silhouettes blend occasion dressing with everyday ease.</p>
+          <a href="collections.html?filter=festive" class="btn btn--white" id="editorial-shop-festive">Shop Festive Edit</a>
+        </div>
+        <div class="editorial-visual" aria-hidden="true">
+          <div class="editorial-orb orb-1"></div>
+          <div class="editorial-orb orb-2"></div>
+          <div class="editorial-orb orb-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TRUST STRIP ========== -->
+    <section class="trust-strip" aria-label="Why shop with Slayvana">
+      <div class="section-container">
+        <ul class="trust-list" role="list">
+          <li class="trust-item" role="listitem">
+            <span class="trust-icon" aria-hidden="true">&#x1F69A;</span>
+            <div>
+              <strong class="trust-title">Free Delivery</strong>
+              <p class="trust-desc">On orders above Rs. 999</p>
+            </div>
+          </li>
+          <li class="trust-item" role="listitem">
+            <span class="trust-icon" aria-hidden="true">&#x21A9;&#xFE0F;</span>
+            <div>
+              <strong class="trust-title">Easy Returns</strong>
+              <p class="trust-desc">7-day no-questions return</p>
+            </div>
+          </li>
+          <li class="trust-item" role="listitem">
+            <span class="trust-icon" aria-hidden="true">&#x1F33F;</span>
+            <div>
+              <strong class="trust-title">Premium Cotton</strong>
+              <p class="trust-desc">Breathable, ethically sourced</p>
+            </div>
+          </li>
+          <li class="trust-item" role="listitem">
+            <span class="trust-icon" aria-hidden="true">&#x1F512;</span>
+            <div>
+              <strong class="trust-title">Secure Payment</strong>
+              <p class="trust-desc">UPI, Cards, COD accepted</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials-section" aria-labelledby="testimonials-heading">
+      <div class="section-container">
+        <h2 class="section-title section-title--center" id="testimonials-heading">Slay Community</h2>
+        <p class="section-sub">Real women, real looks, real love.</p>
+        <div class="testimonials-grid" role="list">
+
+          <blockquote class="testimonial-card" role="listitem">
+            <div class="testimonial-rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"The Chamkili set is absolutely gorgeous. The fabric is so soft and the fit is perfect. Got so many compliments at my cousin's mehendi!"</p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">P</div>
+              <div>
+                <cite class="author-name">Priya M.</cite>
+                <span class="author-location">Mumbai</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" role="listitem">
+            <div class="testimonial-rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"Finally an ethnic brand that gets my vibe. The teal cape top is the most beautiful piece I own. Ordering again for sure!"</p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">A</div>
+              <div>
+                <cite class="author-name">Ananya R.</cite>
+                <span class="author-location">Bangalore</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" role="listitem">
+            <div class="testimonial-rating" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"Delivery was super fast and the packaging was so cute. The mustard co-ord set looks even better in person. Highly recommend!"</p>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">S</div>
+              <div>
+                <cite class="author-name">Sneha K.</cite>
+                <span class="author-location">Delhi</span>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="section-container">
+        <div class="newsletter-inner">
+          <div class="newsletter-text">
+            <h2 class="newsletter-heading" id="newsletter-heading">Join the Slay Circle</h2>
+            <p class="newsletter-sub">Get early access to drops, exclusive offers and style inspiration straight to your inbox.</p>
+          </div>
+          <form class="newsletter-form" action="#" method="post" novalidate aria-label="Newsletter signup">
+            <div class="newsletter-field-group">
+              <label for="newsletter-email" class="sr-only">Your email address</label>
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                class="newsletter-input"
+                placeholder="Enter your email address"
+                autocomplete="email"
+                required
+                aria-required="true"
+                aria-describedby="newsletter-hint"
+              />
+              <button type="submit" class="btn btn--primary" id="newsletter-submit" aria-label="Subscribe to newsletter">
+                Subscribe
+              </button>
+            </div>
+            <p class="newsletter-hint" id="newsletter-hint">No spam, ever. Unsubscribe any time.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="Slayvana home">SLAYVANA</a>
+        <p class="footer-tagline">Modern ethnic fusion fashion for the woman who refuses to choose between comfort and style.</p>
+        <div class="footer-social" aria-label="Follow us on social media">
+          <a href="https://www.instagram.com/slayvana/" class="social-link" aria-label="Follow Slayvana on Instagram" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/slayvana" class="social-link" aria-label="Follow Slayvana on Facebook" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://slayvana.com/" class="social-link" aria-label="Visit Slayvana website" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-nav-group">
+          <h3 class="footer-nav-heading">Shop</h3>
+          <ul role="list">
+            <li><a href="collections.html" class="footer-link">New Arrivals</a></li>
+            <li><a href="collections.html?cat=kurtis" class="footer-link">Kurtis</a></li>
+            <li><a href="collections.html?cat=coord-sets" class="footer-link">Co-ord Sets</a></li>
+            <li><a href="collections.html?style=cape" class="footer-link">Cape Tops</a></li>
+            <li><a href="collections.html?filter=festive" class="footer-link">Festive Edit</a></li>
+            <li><a href="collections.html?cat=sale" class="footer-link footer-link--sale">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h3 class="footer-nav-heading">Help</h3>
+          <ul role="list">
+            <li><a href="faq.html" class="footer-link">FAQs</a></li>
+            <li><a href="sizing.html" class="footer-link">Size Guide</a></li>
+            <li><a href="shipping.html" class="footer-link">Shipping Info</a></li>
+            <li><a href="returns.html" class="footer-link">Returns &amp; Exchanges</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h3 class="footer-nav-heading">Company</h3>
+          <ul role="list">
+            <li><a href="about.html" class="footer-link">About Slayvana</a></li>
+            <li><a href="sustainability.html" class="footer-link">Sustainability</a></li>
+            <li><a href="careers.html" class="footer-link">Careers</a></li>
+            <li><a href="press.html" class="footer-link">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h3 class="footer-nav-heading">Legal</h3>
+          <ul role="list">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="cookies.html" class="footer-link">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&#169; 2026 Slayvana. All rights reserved. Made with love in India.</p>
+      <div class="footer-payment-icons" aria-label="Accepted payment methods">
+        <span class="payment-icon" title="UPI">UPI</span>
+        <span class="payment-icon" title="Visa">VISA</span>
+        <span class="payment-icon" title="Mastercard">MC</span>
+        <span class="payment-icon" title="Cash on Delivery">COD</span>
+        <span class="payment-icon" title="Net Banking">NB</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>

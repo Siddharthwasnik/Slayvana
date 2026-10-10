@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Slayvana — Modern Ethnic Fusion Fashion</title>
+  <meta name="description" content="Slayvana blends traditional Indian garments with contemporary silhouettes. Discover our brand story, values and founding mission." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .about-hero{background:var(--color-surface-base);color:var(--color-text-tertiary);padding:var(--space-4xl) 0;text-align:center;position:relative;overflow:hidden;}
+    .about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(200,135,74,0.15) 0%,transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(124,77,186,0.1) 0%,transparent 50%);pointer-events:none;}
+    .about-hero-eyebrow{font-size:var(--font-size-xs);letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-warm);margin-bottom:var(--space-md);}
+    .about-hero-title{font-family:var(--font-family-primary);font-size:clamp(36px,6vw,80px);font-weight:300;font-style:italic;line-height:1.1;margin-bottom:var(--space-lg);}
+    .about-hero-title strong{font-style:normal;font-weight:500;}
+    .about-hero-sub{font-size:var(--font-size-lg);color:rgba(255,255,255,0.7);max-width:560px;margin:0 auto;line-height:1.6;}
+    .content-section{padding:var(--space-4xl) 0;}
+    .content-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-lg);}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4xl);align-items:center;}
+    .two-col-img{aspect-ratio:4/5;border-radius:var(--radius-md);overflow:hidden;background:var(--color-surface-raised);}
+    .two-col-img img{width:100%;height:100%;object-fit:cover;}
+    .section-eyebrow{font-size:var(--font-size-xs);letter-spacing:0.2em;text-transform:uppercase;color:var(--color-accent-warm);margin-bottom:var(--space-sm);}
+    .section-h2{font-family:var(--font-family-primary);font-size:clamp(28px,3.5vw,44px);font-weight:500;line-height:1.15;margin-bottom:var(--space-md);}
+    .section-body{font-size:var(--font-size-md);color:#555;line-height:1.75;}
+    .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-xl);margin-top:var(--space-2xl);}
+    .value-card{text-align:center;padding:var(--space-xl);}
+    .value-icon{font-size:48px;margin-bottom:var(--space-md);}
+    .value-title{font-family:var(--font-family-primary);font-size:22px;font-weight:500;margin-bottom:var(--space-8);}
+    .value-body{font-size:var(--font-size-sm);color:#666;line-height:1.65;}
+    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-xl);margin-top:var(--space-2xl);}
+    .team-card{text-align:center;}
+    .team-photo{width:120px;height:120px;border-radius:var(--radius-pill);background:var(--color-surface-raised);margin:0 auto var(--space-md);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:40px;}
+    .team-name{font-family:var(--font-family-primary);font-size:18px;font-weight:500;}
+    .team-role{font-size:var(--font-size-xs);color:#888;letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;}
+    .press-section{background:var(--color-surface-raised);padding:var(--space-3xl) 0;}
+    .press-logos{display:flex;gap:var(--space-2xl);align-items:center;justify-content:center;flex-wrap:wrap;margin-top:var(--space-xl);}
+    .press-logo{font-size:var(--font-size-2xl);font-weight:700;color:#bbb;letter-spacing:-0.03em;transition:color var(--motion-fast);}
+    .press-logo:hover{color:var(--color-surface-base);}
+    .about-cta{background:var(--color-surface-base);color:var(--color-text-tertiary);padding:var(--space-4xl) 0;text-align:center;}
+    .about-cta-title{font-family:var(--font-family-primary);font-size:clamp(28px,4vw,52px);font-weight:300;font-style:italic;margin-bottom:var(--space-lg);}
+    @media(max-width:768px){.two-col{grid-template-columns:1fr;}.values-grid{grid-template-columns:1fr;}.team-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.team-grid{grid-template-columns:1fr;}.press-logos{gap:var(--space-lg);}}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="announcement-bar" role="banner"><div class="announcement-inner"><span>Free shipping on orders above Rs. 999</span><span class="ann-divider">|</span><span>Use code <strong>SLAY15</strong> for 15% off</span></div></div>
+<header class="site-header" id="site-header" role="banner">
+  <div class="header-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+    <a href="index.html" class="site-logo" aria-label="Slayvana home"><span class="logo-text">SLAYVANA</span><span class="logo-tagline">Modern Ethnic Fusion</span></a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary"><ul class="nav-list" role="list">
+      <li class="nav-item has-dropdown"><a href="collections.html" class="nav-link" aria-haspopup="true" aria-expanded="false">New Arrivals</a><div class="nav-dropdown" role="region"><ul role="list"><li><a href="collections.html?filter=week" class="dropdown-link">This Week Drop</a></li><li><a href="collections.html?filter=festive" class="dropdown-link">Festive Edit</a></li></ul></div></li>
+      <li class="nav-item has-dropdown"><a href="collections.html?cat=kurtis" class="nav-link" aria-haspopup="true" aria-expanded="false">Kurtis</a><div class="nav-dropdown" role="region"><ul role="list"><li><a href="collections.html?style=peplum" class="dropdown-link">Peplum</a></li><li><a href="collections.html?style=halter" class="dropdown-link">Halter Neck</a></li></ul></div></li>
+      <li class="nav-item has-dropdown"><a href="collections.html?cat=coord-sets" class="nav-link" aria-haspopup="true" aria-expanded="false">Co-ord Sets</a><div class="nav-dropdown" role="region"><ul role="list"><li><a href="collections.html?style=twinning" class="dropdown-link">Twinning Sets</a></li></ul></div></li>
+      <li class="nav-item"><a href="collections.html?cat=sale" class="nav-link nav-link--sale">Sale</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link" aria-current="page">About</a></li>
+    </ul></nav>
+    <div class="header-actions">
+      <a href="account.html" class="action-btn" aria-label="My account"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="wishlist.html" class="action-btn" aria-label="Wishlist"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+      <a href="cart.html" class="action-btn cart-btn" aria-label="Shopping cart, 2 items"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-badge" aria-hidden="true">2</span></a>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"><div class="mobile-nav-panel" id="mobile-nav-panel" role="dialog" aria-label="Navigation" aria-modal="true"><button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><div class="mobile-logo">SLAYVANA</div><nav aria-label="Mobile navigation"><ul class="mobile-nav-list" role="list"><li><a href="index.html" class="mobile-nav-link">Home</a></li><li><a href="collections.html" class="mobile-nav-link">Shop</a></li><li><a href="about.html" class="mobile-nav-link">About</a></li><li><a href="cart.html" class="mobile-nav-link">Cart</a></li></ul></nav></div></div>
+
+<main id="main-content">
+  <!-- Hero -->
+  <section class="about-hero" aria-label="Brand manifesto">
+    <div class="content-inner">
+      <p class="about-hero-eyebrow">Our Story</p>
+      <h1 class="about-hero-title">Fashion that <strong>celebrates</strong><br />your roots and your rise.</h1>
+      <p class="about-hero-sub">We believe Indian women deserve clothes that are as bold, layered, and multidimensional as they are. Slayvana was born from that belief.</p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="content-section" aria-labelledby="mission-heading">
+    <div class="content-inner">
+      <div class="two-col">
+        <div class="two-col-img"><img src="images/hero_banner.jpg" alt="Model in Slayvana ethnic fusion ensemble" loading="lazy" /></div>
+        <div>
+          <p class="section-eyebrow">Our Mission</p>
+          <h2 class="section-h2" id="mission-heading">Effortless comfort meets cultural pride.</h2>
+          <p class="section-body">Slayvana is a modern ethnic fashion brand built for the woman who walks with confidence — whether she's heading to a pooja or a party. We blend the heritage of Indian textiles with the energy of contemporary silhouettes, creating clothes you'll reach for again and again.</p>
+          <p class="section-body" style="margin-top:var(--space-md);">Every piece is thoughtfully designed in-house by our team of Indian designers who understand the nuance of dressing for Indian climates, body types, and occasions.</p>
+          <a href="collections.html" class="btn btn--primary" style="margin-top:var(--space-xl);display:inline-flex;border-radius:var(--radius-xs);">Shop the Collection</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="content-section" style="background:var(--color-surface-raised);" aria-labelledby="values-heading">
+    <div class="content-inner">
+      <div style="text-align:center;">
+        <p class="section-eyebrow">What We Stand For</p>
+        <h2 class="section-h2" id="values-heading">Our Values</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-icon" aria-hidden="true">&#x1F9F5;</div><h3 class="value-title">Craft</h3><p class="value-body">Every print, cut, and seam is intentional. We work with skilled artisans across India to bring intricate craftsmanship to everyday wardrobes.</p></div>
+        <div class="value-card"><div class="value-icon" aria-hidden="true">&#x1F333;</div><h3 class="value-title">Sustainability</h3><p class="value-body">We use GOTS-certified organic cotton, low-impact dyes, and minimal plastic packaging. Comfort should never come at the planet's expense.</p></div>
+        <div class="value-card"><div class="value-icon" aria-hidden="true">&#x1F91D;</div><h3 class="value-title">Community</h3><p class="value-body">Slayvana is a sisterhood. We celebrate every body, every occasion, and every woman who chooses to slay in her own way, every day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="content-section" aria-labelledby="story-heading">
+    <div class="content-inner">
+      <div class="two-col">
+        <div>
+          <p class="section-eyebrow">How It All Started</p>
+          <h2 class="section-h2" id="story-heading">From a Mumbai apartment to 50,000+ happy customers.</h2>
+          <p class="section-body">Slayvana started in 2022 when founder Aarav Mehta noticed a gap: Indian women wanted clothes that were rooted in tradition but styled for today. He partnered with textile designers from Jaipur and Surat to create the first collection of 12 kurtis — and sold out in 48 hours.</p>
+          <p class="section-body" style="margin-top:var(--space-md);">Today, Slayvana ships to 800+ cities across India, employs 40 people, and releases new collections every Friday. The Mumbai apartment has been replaced by a studio, but the spirit remains the same: clothes that make Indian women feel unstoppable.</p>
+        </div>
+        <div class="two-col-img"><img src="images/product_2.jpg" alt="Slayvana founder at work" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="content-section" style="background:var(--color-surface-raised);" aria-labelledby="team-heading">
+    <div class="content-inner">
+      <div style="text-align:center;">
+        <p class="section-eyebrow">The People</p>
+        <h2 class="section-h2" id="team-heading">Meet the Team</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card"><div class="team-photo" aria-hidden="true">&#x1F9D5;</div><p class="team-name">Aarav Mehta</p><p class="team-role">Founder &amp; CEO</p></div>
+        <div class="team-card"><div class="team-photo" aria-hidden="true">&#x1F469;&#x200D;&#x1F3A8;</div><p class="team-name">Priya Nair</p><p class="team-role">Head of Design</p></div>
+        <div class="team-card"><div class="team-photo" aria-hidden="true">&#x1F469;&#x200D;&#x1F4BB;</div><p class="team-name">Rhea Kapoor</p><p class="team-role">Brand &amp; Marketing</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press -->
+  <section class="press-section" aria-labelledby="press-heading">
+    <div class="content-inner" style="text-align:center;">
+      <h2 class="section-h2" id="press-heading" style="font-size:22px;margin-bottom:0;">As seen in</h2>
+      <div class="press-logos">
+        <span class="press-logo">Vogue India</span>
+        <span class="press-logo">Elle India</span>
+        <span class="press-logo">Femina</span>
+        <span class="press-logo">Harper's Bazaar</span>
+        <span class="press-logo">Myntra</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta" aria-labelledby="about-cta-heading">
+    <div class="content-inner">
+      <p class="about-hero-eyebrow" style="text-align:center;">Ready to Slay?</p>
+      <h2 class="about-cta-title" id="about-cta-heading">"Wear your roots,<br />own your story."</h2>
+      <div style="display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;">
+        <a href="collections.html" class="btn btn--primary" style="border-radius:var(--radius-xs);padding:14px 32px;">Shop Now</a>
+        <a href="contact.html" class="btn btn--outline" style="border-radius:var(--radius-xs);padding:14px 32px;border-color:rgba(255,255,255,0.4);color:var(--color-text-tertiary);">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo"><div class="footer-inner"><div class="footer-brand"><a href="index.html" class="footer-logo">SLAYVANA</a><p class="footer-tagline">Modern ethnic fusion fashion — comfort meets edge.</p></div><nav class="footer-nav" aria-label="Footer"><div class="footer-nav-group"><h3 class="footer-nav-heading">Shop</h3><ul role="list"><li><a href="collections.html" class="footer-link">New Arrivals</a></li><li><a href="collections.html?cat=kurtis" class="footer-link">Kurtis</a></li><li><a href="collections.html?cat=sale" class="footer-link footer-link--sale">Sale</a></li></ul></div><div class="footer-nav-group"><h3 class="footer-nav-heading">Help</h3><ul role="list"><li><a href="faq.html" class="footer-link">FAQs</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li><li><a href="sizing.html" class="footer-link">Size Guide</a></li></ul></div><div class="footer-nav-group"><h3 class="footer-nav-heading">Company</h3><ul role="list"><li><a href="about.html" class="footer-link">About</a></li><li><a href="privacy.html" class="footer-link">Privacy</a></li><li><a href="terms.html" class="footer-link">Terms</a></li></ul></div></nav></div><div class="footer-bottom"><p class="footer-copy">&#169; 2026 Slayvana. All rights reserved.</p></div></footer>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="main.js"></script>
+</body></html>

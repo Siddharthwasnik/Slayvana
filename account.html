@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account — Slayvana</title>
+  <meta name="description" content="Manage your Slayvana account — view orders, addresses, wishlist and profile settings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .account-layout{max-width:var(--max-width);margin:0 auto;padding:var(--space-xl) var(--space-lg);}
+    .account-header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-xl);}
+    .account-greeting{font-family:var(--font-family-primary);font-size:clamp(22px,3vw,32px);font-weight:500;}
+    .account-greeting-sub{font-size:var(--font-size-sm);color:#888;margin-top:4px;}
+    .orders-grid{display:flex;flex-direction:column;gap:var(--space-md);}
+    .address-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-md);}
+    .address-card{border:1.5px solid var(--color-border-subtle);border-radius:var(--radius-sm);padding:var(--space-md);position:relative;}
+    .address-card.default{border-color:var(--color-surface-base);}
+    .address-default-badge{position:absolute;top:var(--space-8);right:var(--space-8);background:var(--color-surface-base);color:var(--color-text-tertiary);font-size:10px;padding:2px 8px;border-radius:var(--radius-pill);}
+    .address-name{font-weight:var(--font-weight-semibold);font-size:var(--font-size-sm);margin-bottom:4px;}
+    .address-text{font-size:var(--font-size-sm);color:#666;line-height:1.5;}
+    .address-actions{display:flex;gap:var(--space-8);margin-top:var(--space-sm);}
+    .address-btn{font-size:var(--font-size-xs);color:var(--color-text-inverse);text-decoration:underline;cursor:pointer;background:none;border:none;font-family:inherit;}
+    .profile-form{max-width:480px;display:flex;flex-direction:column;gap:var(--space-md);}
+    .notif-row{display:flex;align-items:center;justify-content:space-between;padding:var(--space-md) 0;border-bottom:1px solid var(--color-border-subtle);}
+    .notif-label{font-size:var(--font-size-sm);}.notif-sub{font-size:var(--font-size-xs);color:#888;}
+    .toggle{position:relative;display:inline-block;width:44px;height:24px;}
+    .toggle input{opacity:0;width:0;height:0;}
+    .toggle-slider{position:absolute;cursor:pointer;inset:0;background:#ccc;border-radius:24px;transition:background 200ms;}
+    .toggle-slider::before{content:'';position:absolute;height:18px;width:18px;left:3px;bottom:3px;background:white;border-radius:50%;transition:transform 200ms;}
+    .toggle input:checked+.toggle-slider{background:var(--color-surface-base);}
+    .toggle input:checked+.toggle-slider::before{transform:translateX(20px);}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<div class="announcement-bar" role="banner"><div class="announcement-inner"><span>Free shipping on orders above Rs. 999</span><span class="ann-divider">|</span><span>Use code <strong>SLAY15</strong> for 15% off</span></div></div>
+<header class="site-header" id="site-header" role="banner">
+  <div class="header-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+    <a href="index.html" class="site-logo" aria-label="Slayvana home"><span class="logo-text">SLAYVANA</span><span class="logo-tagline">Modern Ethnic Fusion</span></a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary"><ul class="nav-list" role="list"><li class="nav-item"><a href="collections.html" class="nav-link">New Arrivals</a></li><li class="nav-item"><a href="collections.html?cat=kurtis" class="nav-link">Kurtis</a></li><li class="nav-item"><a href="collections.html?cat=coord-sets" class="nav-link">Co-ord Sets</a></li><li class="nav-item"><a href="collections.html?cat=sale" class="nav-link nav-link--sale">Sale</a></li></ul></nav>
+    <div class="header-actions"><a href="wishlist.html" class="action-btn" aria-label="Wishlist"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a><a href="cart.html" class="action-btn cart-btn" aria-label="Shopping cart, 2 items"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-badge" aria-hidden="true">2</span></a></div>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"><div class="mobile-nav-panel" id="mobile-nav-panel" role="dialog" aria-label="Navigation" aria-modal="true"><button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><div class="mobile-logo">SLAYVANA</div><nav aria-label="Mobile navigation"><ul class="mobile-nav-list" role="list"><li><a href="index.html" class="mobile-nav-link">Home</a></li><li><a href="collections.html" class="mobile-nav-link">Shop</a></li><li><a href="cart.html" class="mobile-nav-link">Cart</a></li></ul></nav></div></div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="breadcrumb-inner"><span class="breadcrumb-item"><a href="index.html">Home</a></span><span class="breadcrumb-sep" aria-hidden="true">&#x203A;</span><span class="breadcrumb-item" aria-current="page">My Account</span></div></nav>
+
+<main id="main-content">
+  <div class="account-layout">
+    <div class="account-header-row">
+      <div><h1 class="account-greeting">Hello, Priya &#x1F44B;</h1><p class="account-greeting-sub">Member since October 2024 &nbsp;&#183;&nbsp; 12 orders placed</p></div>
+      <button class="btn btn--outline" aria-label="Sign out">Sign Out</button>
+    </div>
+
+    <div class="tabs-nav" role="tablist" aria-label="Account sections">
+      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-orders" id="tab-orders-btn">My Orders</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-addresses" id="tab-addr-btn">Addresses</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-wishlist-acc" id="tab-wish-btn">Wishlist (4)</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-profile" id="tab-prof-btn">Profile</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-notif" id="tab-notif-btn">Notifications</button>
+    </div>
+
+    <!-- Orders -->
+    <div class="tab-panel active" id="tab-orders" role="tabpanel" aria-labelledby="tab-orders-btn">
+      <div class="orders-grid">
+        <div class="order-card"><div class="order-card-header"><div><p class="order-id">ORDER #SLV-20261005-4201</p><p class="order-date">Placed on 5 Oct 2026</p></div><span class="order-status order-status--delivered">Delivered</span><p class="order-total">Rs. 2,898</p></div><div class="order-card-body"><div class="order-item"><img src="images/product_1.jpg" alt="Chamkili Peplum Set" class="order-item-img" /><div class="order-item-info"><p class="order-item-name">Chamkili Peplum Set</p><p class="order-item-meta">Pink | M | x1</p></div></div><div class="order-item"><img src="images/product_3.jpg" alt="Sunshine Block Print Set" class="order-item-img" /><div class="order-item-info"><p class="order-item-name">Sunshine Block Print Set</p><p class="order-item-meta">Mustard | S | x1</p></div></div></div><div class="order-card-footer"><button class="btn btn--outline" style="font-size:var(--font-size-xs);padding:6px 12px;" aria-label="Reorder this order">Reorder</button><a href="returns.html" class="btn btn--outline" style="font-size:var(--font-size-xs);padding:6px 12px;">Return / Exchange</a><button class="btn btn--outline" style="font-size:var(--font-size-xs);padding:6px 12px;" aria-label="Download invoice">Invoice</button></div></div>
+        <div class="order-card"><div class="order-card-header"><div><p class="order-id">ORDER #SLV-20260920-3891</p><p class="order-date">Placed on 20 Sep 2026</p></div><span class="order-status order-status--returned">Returned</span><p class="order-total">Rs. 3,499</p></div><div class="order-card-body"><div class="order-item"><img src="images/product_2.jpg" alt="Teal Majesty Cape Set" class="order-item-img" /><div class="order-item-info"><p class="order-item-name">Teal Majesty Cape Set</p><p class="order-item-meta">Teal | L | x1</p></div></div></div><div class="order-card-footer"><button class="btn btn--outline" style="font-size:var(--font-size-xs);padding:6px 12px;">View Details</button></div></div>
+      </div>
+    </div>
+
+    <!-- Addresses -->
+    <div class="tab-panel" id="tab-addresses" role="tabpanel" aria-labelledby="tab-addr-btn">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:var(--space-md);"><button class="btn btn--primary" style="padding:8px 16px;font-size:var(--font-size-xs);">+ Add New Address</button></div>
+      <div class="address-grid">
+        <div class="address-card default"><span class="address-default-badge">Default</span><p class="address-name">Priya Sharma</p><p class="address-text">Flat 4B, Sunshine Towers<br />Bandra West, Mumbai — 400050<br />Maharashtra<br />&#128222; 9876543210</p><div class="address-actions"><button class="address-btn">Edit</button><button class="address-btn" style="color:#c0392b;">Remove</button></div></div>
+        <div class="address-card"><p class="address-name">Priya Sharma</p><p class="address-text">12, Rose Garden Colony<br />Koramangala, Bangalore — 560095<br />Karnataka<br />&#128222; 9876543210</p><div class="address-actions"><button class="address-btn">Edit</button><button class="address-btn">Set as Default</button><button class="address-btn" style="color:#c0392b;">Remove</button></div></div>
+      </div>
+    </div>
+
+    <!-- Wishlist quick view -->
+    <div class="tab-panel" id="tab-wishlist-acc" role="tabpanel" aria-labelledby="tab-wish-btn">
+      <p style="margin-bottom:var(--space-md);"><a href="wishlist.html" style="color:var(--color-text-inverse);text-decoration:underline;">View full wishlist &#x203A;</a></p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--space-md);">
+        <article class="product-card"><div class="product-card-media"><a href="product.html?id=chamkili" class="product-media-link" tabindex="-1" aria-hidden="true"><img src="images/product_1.jpg" alt="Chamkili Peplum Set" class="product-img product-img--primary" /></a><button class="product-wishlist-btn" aria-label="Remove from wishlist" aria-pressed="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="product-card-info"><h3 class="product-name"><a href="product.html?id=chamkili" class="product-name-link">Chamkili Peplum Set</a></h3><div class="product-pricing"><span class="price-current">Rs. 1,299</span></div><a href="cart.html" class="btn btn--add-to-cart">Move to Cart</a></div></article>
+      </div>
+    </div>
+
+    <!-- Profile -->
+    <div class="tab-panel" id="tab-profile" role="tabpanel" aria-labelledby="tab-prof-btn">
+      <form class="profile-form" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" for="prof-first">First Name</label><input type="text" id="prof-first" class="form-input" value="Priya" autocomplete="given-name" /></div>
+          <div class="form-group"><label class="form-label" for="prof-last">Last Name</label><input type="text" id="prof-last" class="form-input" value="Sharma" autocomplete="family-name" /></div>
+        </div>
+        <div class="form-group"><label class="form-label" for="prof-email">Email</label><input type="email" id="prof-email" class="form-input" value="priya@email.com" autocomplete="email" /></div>
+        <div class="form-group"><label class="form-label" for="prof-phone">Phone</label><input type="tel" id="prof-phone" class="form-input" value="9876543210" autocomplete="tel" /></div>
+        <hr style="border:none;border-top:1px solid var(--color-border-subtle);margin:var(--space-md) 0;" />
+        <h3 style="font-size:var(--font-size-sm);font-weight:var(--font-weight-semibold);margin-bottom:var(--space-md);">Change Password</h3>
+        <div class="form-group"><label class="form-label" for="curr-pwd">Current Password</label><input type="password" id="curr-pwd" class="form-input" placeholder="••••••••" autocomplete="current-password" /></div>
+        <div class="form-group"><label class="form-label" for="new-pwd">New Password</label><input type="password" id="new-pwd" class="form-input" placeholder="••••••••" autocomplete="new-password" /></div>
+        <div class="form-group"><label class="form-label" for="conf-pwd">Confirm Password</label><input type="password" id="conf-pwd" class="form-input" placeholder="••••••••" autocomplete="new-password" /></div>
+        <button type="submit" class="btn btn--primary" style="align-self:flex-start;padding:10px 24px;border-radius:var(--radius-xs);">Save Changes</button>
+      </form>
+    </div>
+
+    <!-- Notifications -->
+    <div class="tab-panel" id="tab-notif" role="tabpanel" aria-labelledby="tab-notif-btn">
+      <div>
+        <div class="notif-row"><div><p class="notif-label">Order updates</p><p class="notif-sub">Shipping and delivery notifications</p></div><label class="toggle" aria-label="Order updates notifications"><input type="checkbox" checked /><span class="toggle-slider"></span></label></div>
+        <div class="notif-row"><div><p class="notif-label">Promotional emails</p><p class="notif-sub">New arrivals, sales, and exclusive offers</p></div><label class="toggle" aria-label="Promotional emails"><input type="checkbox" checked /><span class="toggle-slider"></span></label></div>
+        <div class="notif-row"><div><p class="notif-label">SMS alerts</p><p class="notif-sub">Order and delivery updates via SMS</p></div><label class="toggle" aria-label="SMS alerts"><input type="checkbox" /><span class="toggle-slider"></span></label></div>
+        <div class="notif-row" style="border-bottom:none;"><div><p class="notif-label">WhatsApp updates</p><p class="notif-sub">Order tracking and exclusive drops via WhatsApp</p></div><label class="toggle" aria-label="WhatsApp updates"><input type="checkbox" checked /><span class="toggle-slider"></span></label></div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer" role="contentinfo"><div class="footer-inner"><div class="footer-brand"><a href="index.html" class="footer-logo">SLAYVANA</a><p class="footer-tagline">Modern ethnic fusion fashion.</p></div><nav class="footer-nav" aria-label="Footer"><div class="footer-nav-group"><h3 class="footer-nav-heading">Shop</h3><ul role="list"><li><a href="collections.html" class="footer-link">Collections</a></li></ul></div><div class="footer-nav-group"><h3 class="footer-nav-heading">Help</h3><ul role="list"><li><a href="contact.html" class="footer-link">Contact</a></li><li><a href="returns.html" class="footer-link">Returns</a></li></ul></div></nav></div><div class="footer-bottom"><p class="footer-copy">&#169; 2026 Slayvana.</p></div></footer>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+<script src="main.js"></script>
+<script>
+  // Tab system
+  const tabBtns=document.querySelectorAll('.tab-btn[role="tab"]');
+  const tabPanels=document.querySelectorAll('.tab-panel');
+  tabBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      tabBtns.forEach(b=>{b.setAttribute('aria-selected','false');});
+      tabPanels.forEach(p=>p.classList.remove('active'));
+      btn.setAttribute('aria-selected','true');
+      const panel=document.getElementById(btn.getAttribute('aria-controls'));
+      if(panel)panel.classList.add('active');
+    });
+    btn.addEventListener('keydown',e=>{
+      const all=[...tabBtns]; const i=all.indexOf(btn);
+      if(e.key==='ArrowRight'){e.preventDefault();all[(i+1)%all.length].click();}
+      if(e.key==='ArrowLeft'){e.preventDefault();all[(i-1+all.length)%all.length].click();}
+    });
+  });
+  document.querySelectorAll('.product-wishlist-btn').forEach(b=>{b.addEventListener('click',()=>{const p=b.getAttribute('aria-pressed')==='true';b.setAttribute('aria-pressed',String(!p));});});
+</script>
+</body></html>
